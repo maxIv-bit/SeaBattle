@@ -1,0 +1,399 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2D77EE3F256066AD000DA5A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D77EE3E256066AD000DA5A2 /* AppDelegate.swift */; };
+		2D77EE41256066AD000DA5A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D77EE40256066AD000DA5A2 /* SceneDelegate.swift */; };
+		2D77EE43256066AD000DA5A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D77EE42256066AD000DA5A2 /* ViewController.swift */; };
+		2D77EE46256066AD000DA5A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D77EE44256066AD000DA5A2 /* Main.storyboard */; };
+		2D77EE48256066AE000DA5A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D77EE47256066AE000DA5A2 /* Assets.xcassets */; };
+		2D77EE4B256066AE000DA5A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D77EE49256066AE000DA5A2 /* LaunchScreen.storyboard */; };
+		D6CE5342820D6E5D25C87F84 /* libPods-SeaBattle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23BEB001B3C4744876A5B371 /* libPods-SeaBattle.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		23BEB001B3C4744876A5B371 /* libPods-SeaBattle.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SeaBattle.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D77EE3B256066AD000DA5A2 /* SeaBattle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeaBattle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D77EE3E256066AD000DA5A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2D77EE40256066AD000DA5A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		2D77EE42256066AD000DA5A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2D77EE45256066AD000DA5A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2D77EE47256066AE000DA5A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2D77EE4A256066AE000DA5A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2D77EE4C256066AE000DA5A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BC22FE266AB060CC414E190 /* Pods-SeaBattle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeaBattle.release.xcconfig"; path = "Target Support Files/Pods-SeaBattle/Pods-SeaBattle.release.xcconfig"; sourceTree = "<group>"; };
+		F418E5EF4F28BC4DFF2538A8 /* Pods-SeaBattle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeaBattle.debug.xcconfig"; path = "Target Support Files/Pods-SeaBattle/Pods-SeaBattle.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2D77EE38256066AD000DA5A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6CE5342820D6E5D25C87F84 /* libPods-SeaBattle.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2D77EE32256066AD000DA5A2 = {
+			isa = PBXGroup;
+			children = (
+				2D77EE3D256066AD000DA5A2 /* SeaBattle */,
+				2D77EE3C256066AD000DA5A2 /* Products */,
+				F8FFD4389CFA00B3099EBECF /* Pods */,
+				72DD19CE6A867B4A071BB371 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2D77EE3C256066AD000DA5A2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2D77EE3B256066AD000DA5A2 /* SeaBattle.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2D77EE3D256066AD000DA5A2 /* SeaBattle */ = {
+			isa = PBXGroup;
+			children = (
+				2D77EE3E256066AD000DA5A2 /* AppDelegate.swift */,
+				2D77EE40256066AD000DA5A2 /* SceneDelegate.swift */,
+				2D77EE42256066AD000DA5A2 /* ViewController.swift */,
+				2D77EE44256066AD000DA5A2 /* Main.storyboard */,
+				2D77EE47256066AE000DA5A2 /* Assets.xcassets */,
+				2D77EE49256066AE000DA5A2 /* LaunchScreen.storyboard */,
+				2D77EE4C256066AE000DA5A2 /* Info.plist */,
+			);
+			path = SeaBattle;
+			sourceTree = "<group>";
+		};
+		72DD19CE6A867B4A071BB371 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				23BEB001B3C4744876A5B371 /* libPods-SeaBattle.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F8FFD4389CFA00B3099EBECF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F418E5EF4F28BC4DFF2538A8 /* Pods-SeaBattle.debug.xcconfig */,
+				9BC22FE266AB060CC414E190 /* Pods-SeaBattle.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2D77EE3A256066AD000DA5A2 /* SeaBattle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D77EE4F256066AE000DA5A2 /* Build configuration list for PBXNativeTarget "SeaBattle" */;
+			buildPhases = (
+				26BC828B6E88C9B8C4106CA9 /* [CP] Check Pods Manifest.lock */,
+				2D77EE37256066AD000DA5A2 /* Sources */,
+				2D77EE38256066AD000DA5A2 /* Frameworks */,
+				2D77EE39256066AD000DA5A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SeaBattle;
+			productName = SeaBattle;
+			productReference = 2D77EE3B256066AD000DA5A2 /* SeaBattle.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2D77EE33256066AD000DA5A2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1210;
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					2D77EE3A256066AD000DA5A2 = {
+						CreatedOnToolsVersion = 12.1;
+					};
+				};
+			};
+			buildConfigurationList = 2D77EE36256066AD000DA5A2 /* Build configuration list for PBXProject "SeaBattle" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2D77EE32256066AD000DA5A2;
+			productRefGroup = 2D77EE3C256066AD000DA5A2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2D77EE3A256066AD000DA5A2 /* SeaBattle */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2D77EE39256066AD000DA5A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D77EE4B256066AE000DA5A2 /* LaunchScreen.storyboard in Resources */,
+				2D77EE48256066AE000DA5A2 /* Assets.xcassets in Resources */,
+				2D77EE46256066AD000DA5A2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		26BC828B6E88C9B8C4106CA9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SeaBattle-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2D77EE37256066AD000DA5A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D77EE43256066AD000DA5A2 /* ViewController.swift in Sources */,
+				2D77EE3F256066AD000DA5A2 /* AppDelegate.swift in Sources */,
+				2D77EE41256066AD000DA5A2 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2D77EE44256066AD000DA5A2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2D77EE45256066AD000DA5A2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2D77EE49256066AE000DA5A2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2D77EE4A256066AE000DA5A2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2D77EE4D256066AE000DA5A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2D77EE4E256066AE000DA5A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2D77EE50256066AE000DA5A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F418E5EF4F28BC4DFF2538A8 /* Pods-SeaBattle.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S54DSEQWWH;
+				INFOPLIST_FILE = SeaBattle/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "maks-s.SeaBattle";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2D77EE51256066AE000DA5A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BC22FE266AB060CC414E190 /* Pods-SeaBattle.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S54DSEQWWH;
+				INFOPLIST_FILE = SeaBattle/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "maks-s.SeaBattle";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D77EE36256066AD000DA5A2 /* Build configuration list for PBXProject "SeaBattle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D77EE4D256066AE000DA5A2 /* Debug */,
+				2D77EE4E256066AE000DA5A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D77EE4F256066AE000DA5A2 /* Build configuration list for PBXNativeTarget "SeaBattle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D77EE50256066AE000DA5A2 /* Debug */,
+				2D77EE51256066AE000DA5A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2D77EE33256066AD000DA5A2 /* Project object */;
+}
