@@ -1,5 +1,7 @@
 platform :ios, '11.0'
 
 target 'SeaBattle' do
+  pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'SnapKit'
 end
