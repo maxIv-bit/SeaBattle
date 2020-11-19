@@ -11,6 +11,8 @@
 		2D5A7B72256412C500A7CC86 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A7B71256412C500A7CC86 /* BaseViewController.swift */; };
 		2D5A7B75256412ED00A7CC86 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A7B74256412ED00A7CC86 /* BaseViewModel.swift */; };
 		2D5A7B7A256413C700A7CC86 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A7B79256413C700A7CC86 /* SignUpViewModel.swift */; };
+		2D635AF32567036D00AE924B /* CGRectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D635AF22567036D00AE924B /* CGRectExtension.swift */; };
+		2D635AF7256703AA00AE924B /* BackdownTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D635AF6256703AA00AE924B /* BackdownTextFieldView.swift */; };
 		2D64CC532565A4A400AC8FD4 /* ChainHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D64CC522565A4A400AC8FD4 /* ChainHandler.swift */; };
 		2D64CC582565AD2D00AC8FD4 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D64CC572565AD2D00AC8FD4 /* Validator.swift */; };
 		2D64CC5C2565AFE300AC8FD4 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D64CC5B2565AFE300AC8FD4 /* UIViewControllerExtension.swift */; };
@@ -29,6 +31,8 @@
 		2D5A7B71256412C500A7CC86 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		2D5A7B74256412ED00A7CC86 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		2D5A7B79256413C700A7CC86 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		2D635AF22567036D00AE924B /* CGRectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRectExtension.swift; sourceTree = "<group>"; };
+		2D635AF6256703AA00AE924B /* BackdownTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackdownTextFieldView.swift; sourceTree = "<group>"; };
 		2D64CC522565A4A400AC8FD4 /* ChainHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainHandler.swift; sourceTree = "<group>"; };
 		2D64CC572565AD2D00AC8FD4 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		2D64CC5B2565AFE300AC8FD4 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
@@ -62,6 +66,7 @@
 				2D5A7B1A25640F1C00A7CC86 /* CALayerExtension.swift */,
 				2D64CC5B2565AFE300AC8FD4 /* UIViewControllerExtension.swift */,
 				2D64CC5E2565B00B00AC8FD4 /* UIAlertContollerExtension.swift */,
+				2D635AF22567036D00AE924B /* CGRectExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -70,9 +75,17 @@
 			isa = PBXGroup;
 			children = (
 				2D5A7B71256412C500A7CC86 /* BaseViewController.swift */,
+				2D635AF6256703AA00AE924B /* BackdownTextFieldView.swift */,
 				2D5A7B74256412ED00A7CC86 /* BaseViewModel.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		2D635AF52567039000AE924B /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 		2D77EE32256066AD000DA5A2 = {
@@ -96,6 +109,7 @@
 		2D77EE3D256066AD000DA5A2 /* SeaBattle */ = {
 			isa = PBXGroup;
 			children = (
+				2D635AF52567039000AE924B /* Custom */,
 				2D5A7B80256416C000A7CC86 /* Base */,
 				2D77EE3E256066AD000DA5A2 /* AppDelegate.swift */,
 				2D77EE42256066AD000DA5A2 /* SignUpViewController.swift */,
@@ -234,6 +248,8 @@
 				2D77EE3F256066AD000DA5A2 /* AppDelegate.swift in Sources */,
 				2D64CC532565A4A400AC8FD4 /* ChainHandler.swift in Sources */,
 				2D5A7B75256412ED00A7CC86 /* BaseViewModel.swift in Sources */,
+				2D635AF32567036D00AE924B /* CGRectExtension.swift in Sources */,
+				2D635AF7256703AA00AE924B /* BackdownTextFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

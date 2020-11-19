@@ -11,8 +11,8 @@ import Firebase
 
 class SignUpViewController: BaseViewController<SignUpViewModel> {
     private lazy var containerView = UIView()
-    private lazy var emailTextField = UITextField()
-    private lazy var passwordTextField = UITextField()
+    private lazy var emailTextField = BackdownTextFieldView()
+    private lazy var passwordTextField = BackdownTextFieldView()
     private lazy var signUpButton = UIButton()
     private var logInButtonTopConstraint: Constraint?
     
@@ -27,6 +27,8 @@ class SignUpViewController: BaseViewController<SignUpViewModel> {
         [emailTextField, passwordTextField].forEach {
             $0.layer.setBorder(lineWidth: 2.0)
         }
+        signUpButton.layer.setGradient(colors: [UIColor.blue.cgColor, UIColor.white.cgColor], locations: [0.3, 0.7])?.animateGradient()
+        signUpButton.layer.addText("Sign Up", color: UIColor.magenta.cgColor, fontSize: 40)
     }
 }
 
@@ -64,14 +66,15 @@ private extension SignUpViewController {
     func configureUI() {
         emailTextField.placeholder = "Enter email"
         emailTextField.keyboardType = .emailAddress
-        emailTextField.autocorrectionType = .no
         
         passwordTextField.placeholder = "Enter password"
         passwordTextField.isSecureTextEntry = true
-        passwordTextField.autocorrectionType = .no
         
-        signUpButton.setTitle("Log In", for: .normal)
-        signUpButton.setTitleColor(.magenta, for: .normal)
+        [emailTextField, passwordTextField].forEach {
+            $0.backdown = 20
+            $0.autocorrectionType = .no
+        }
+        
         signUpButton.addTarget(self, action: #selector(signUpButtonTouchUpInside), for: .touchUpInside)
     }
     
