@@ -4,4 +4,5 @@ target 'SeaBattle' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'SnapKit'
+  pod 'IQKeyboardManagerSwift'
 end

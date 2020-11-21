@@ -7,10 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D5A0A8B25692DF200D725ED /* SeaBattleIntroScreen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D5A0A8A25692DF200D725ED /* SeaBattleIntroScreen.jpg */; };
+		2D5A0A95256946B500D725ED /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A0A94256946B500D725ED /* Errors.swift */; };
+		2D5A0B002569528D00D725ED /* EmailChainHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A0AFF2569528D00D725ED /* EmailChainHandler.swift */; };
+		2D5A0B032569529900D725ED /* PasswordChainHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A0B022569529900D725ED /* PasswordChainHandler.swift */; };
+		2D5A0B06256952A600D725ED /* SignInChainHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A0B05256952A600D725ED /* SignInChainHandler.swift */; };
+		2D5A0B09256952B000D725ED /* SignUpChainHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A0B08256952B000D725ED /* SignUpChainHandler.swift */; };
 		2D5A7B1B25640F1C00A7CC86 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A7B1A25640F1C00A7CC86 /* CALayerExtension.swift */; };
 		2D5A7B72256412C500A7CC86 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A7B71256412C500A7CC86 /* BaseViewController.swift */; };
 		2D5A7B75256412ED00A7CC86 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A7B74256412ED00A7CC86 /* BaseViewModel.swift */; };
-		2D5A7B7A256413C700A7CC86 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A7B79256413C700A7CC86 /* SignUpViewModel.swift */; };
+		2D5A7B7A256413C700A7CC86 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A7B79256413C700A7CC86 /* AuthViewModel.swift */; };
 		2D635AF32567036D00AE924B /* CGRectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D635AF22567036D00AE924B /* CGRectExtension.swift */; };
 		2D635AF7256703AA00AE924B /* BackdownTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D635AF6256703AA00AE924B /* BackdownTextFieldView.swift */; };
 		2D64CC532565A4A400AC8FD4 /* ChainHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D64CC522565A4A400AC8FD4 /* ChainHandler.swift */; };
@@ -19,7 +25,7 @@
 		2D64CC5F2565B00B00AC8FD4 /* UIAlertContollerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D64CC5E2565B00B00AC8FD4 /* UIAlertContollerExtension.swift */; };
 		2D740480256302E500B63D22 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D74047F256302E500B63D22 /* GoogleService-Info.plist */; };
 		2D77EE3F256066AD000DA5A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D77EE3E256066AD000DA5A2 /* AppDelegate.swift */; };
-		2D77EE43256066AD000DA5A2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D77EE42256066AD000DA5A2 /* SignUpViewController.swift */; };
+		2D77EE43256066AD000DA5A2 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D77EE42256066AD000DA5A2 /* AuthViewController.swift */; };
 		2D77EE48256066AE000DA5A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D77EE47256066AE000DA5A2 /* Assets.xcassets */; };
 		2D77EE4B256066AE000DA5A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D77EE49256066AE000DA5A2 /* LaunchScreen.storyboard */; };
 		D6CE5342820D6E5D25C87F84 /* libPods-SeaBattle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23BEB001B3C4744876A5B371 /* libPods-SeaBattle.a */; };
@@ -27,10 +33,16 @@
 
 /* Begin PBXFileReference section */
 		23BEB001B3C4744876A5B371 /* libPods-SeaBattle.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SeaBattle.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D5A0A8A25692DF200D725ED /* SeaBattleIntroScreen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SeaBattleIntroScreen.jpg; sourceTree = "<group>"; };
+		2D5A0A94256946B500D725ED /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		2D5A0AFF2569528D00D725ED /* EmailChainHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailChainHandler.swift; sourceTree = "<group>"; };
+		2D5A0B022569529900D725ED /* PasswordChainHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChainHandler.swift; sourceTree = "<group>"; };
+		2D5A0B05256952A600D725ED /* SignInChainHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInChainHandler.swift; sourceTree = "<group>"; };
+		2D5A0B08256952B000D725ED /* SignUpChainHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpChainHandler.swift; sourceTree = "<group>"; };
 		2D5A7B1A25640F1C00A7CC86 /* CALayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
 		2D5A7B71256412C500A7CC86 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		2D5A7B74256412ED00A7CC86 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
-		2D5A7B79256413C700A7CC86 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		2D5A7B79256413C700A7CC86 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		2D635AF22567036D00AE924B /* CGRectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRectExtension.swift; sourceTree = "<group>"; };
 		2D635AF6256703AA00AE924B /* BackdownTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackdownTextFieldView.swift; sourceTree = "<group>"; };
 		2D64CC522565A4A400AC8FD4 /* ChainHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainHandler.swift; sourceTree = "<group>"; };
@@ -40,7 +52,7 @@
 		2D74047F256302E500B63D22 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2D77EE3B256066AD000DA5A2 /* SeaBattle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeaBattle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D77EE3E256066AD000DA5A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2D77EE42256066AD000DA5A2 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		2D77EE42256066AD000DA5A2 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		2D77EE47256066AE000DA5A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D77EE4A256066AE000DA5A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D77EE4C256066AE000DA5A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,6 +72,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D5A0A90256942D400D725ED /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2D64CC572565AD2D00AC8FD4 /* Validator.swift */,
+				2D5A0A94256946B500D725ED /* Errors.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		2D5A0A91256942E500D725ED /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				2D77EE47256066AE000DA5A2 /* Assets.xcassets */,
+				2D77EE49256066AE000DA5A2 /* LaunchScreen.storyboard */,
+				2D77EE4C256066AE000DA5A2 /* Info.plist */,
+				2D5A0A8A25692DF200D725ED /* SeaBattleIntroScreen.jpg */,
+				2D74047F256302E500B63D22 /* GoogleService-Info.plist */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		2D5A0AFE2569527A00D725ED /* ChainHandlers */ = {
+			isa = PBXGroup;
+			children = (
+				2D5A0AFF2569528D00D725ED /* EmailChainHandler.swift */,
+				2D5A0B022569529900D725ED /* PasswordChainHandler.swift */,
+				2D5A0B05256952A600D725ED /* SignInChainHandler.swift */,
+				2D5A0B08256952B000D725ED /* SignUpChainHandler.swift */,
+			);
+			path = ChainHandlers;
+			sourceTree = "<group>";
+		};
 		2D5A7B7F256416A700A7CC86 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +121,7 @@
 				2D5A7B71256412C500A7CC86 /* BaseViewController.swift */,
 				2D635AF6256703AA00AE924B /* BackdownTextFieldView.swift */,
 				2D5A7B74256412ED00A7CC86 /* BaseViewModel.swift */,
+				2D64CC522565A4A400AC8FD4 /* ChainHandler.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -109,18 +154,15 @@
 		2D77EE3D256066AD000DA5A2 /* SeaBattle */ = {
 			isa = PBXGroup;
 			children = (
+				2D77EE3E256066AD000DA5A2 /* AppDelegate.swift */,
 				2D635AF52567039000AE924B /* Custom */,
 				2D5A7B80256416C000A7CC86 /* Base */,
-				2D77EE3E256066AD000DA5A2 /* AppDelegate.swift */,
-				2D77EE42256066AD000DA5A2 /* SignUpViewController.swift */,
-				2D5A7B79256413C700A7CC86 /* SignUpViewModel.swift */,
-				2D64CC522565A4A400AC8FD4 /* ChainHandler.swift */,
-				2D64CC572565AD2D00AC8FD4 /* Validator.swift */,
+				2D77EE42256066AD000DA5A2 /* AuthViewController.swift */,
+				2D5A7B79256413C700A7CC86 /* AuthViewModel.swift */,
+				2D5A0AFE2569527A00D725ED /* ChainHandlers */,
+				2D5A0A90256942D400D725ED /* Helpers */,
 				2D5A7B7F256416A700A7CC86 /* Extensions */,
-				2D77EE47256066AE000DA5A2 /* Assets.xcassets */,
-				2D77EE49256066AE000DA5A2 /* LaunchScreen.storyboard */,
-				2D77EE4C256066AE000DA5A2 /* Info.plist */,
-				2D74047F256302E500B63D22 /* GoogleService-Info.plist */,
+				2D5A0A91256942E500D725ED /* Sources */,
 			);
 			path = SeaBattle;
 			sourceTree = "<group>";
@@ -200,6 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D5A0A8B25692DF200D725ED /* SeaBattleIntroScreen.jpg in Resources */,
 				2D77EE4B256066AE000DA5A2 /* LaunchScreen.storyboard in Resources */,
 				2D77EE48256066AE000DA5A2 /* Assets.xcassets in Resources */,
 				2D740480256302E500B63D22 /* GoogleService-Info.plist in Resources */,
@@ -242,12 +285,17 @@
 				2D5A7B72256412C500A7CC86 /* BaseViewController.swift in Sources */,
 				2D64CC5C2565AFE300AC8FD4 /* UIViewControllerExtension.swift in Sources */,
 				2D64CC5F2565B00B00AC8FD4 /* UIAlertContollerExtension.swift in Sources */,
-				2D77EE43256066AD000DA5A2 /* SignUpViewController.swift in Sources */,
+				2D77EE43256066AD000DA5A2 /* AuthViewController.swift in Sources */,
+				2D5A0B002569528D00D725ED /* EmailChainHandler.swift in Sources */,
 				2D5A7B1B25640F1C00A7CC86 /* CALayerExtension.swift in Sources */,
-				2D5A7B7A256413C700A7CC86 /* SignUpViewModel.swift in Sources */,
+				2D5A7B7A256413C700A7CC86 /* AuthViewModel.swift in Sources */,
+				2D5A0A95256946B500D725ED /* Errors.swift in Sources */,
+				2D5A0B032569529900D725ED /* PasswordChainHandler.swift in Sources */,
 				2D77EE3F256066AD000DA5A2 /* AppDelegate.swift in Sources */,
+				2D5A0B06256952A600D725ED /* SignInChainHandler.swift in Sources */,
 				2D64CC532565A4A400AC8FD4 /* ChainHandler.swift in Sources */,
 				2D5A7B75256412ED00A7CC86 /* BaseViewModel.swift in Sources */,
+				2D5A0B09256952B000D725ED /* SignUpChainHandler.swift in Sources */,
 				2D635AF32567036D00AE924B /* CGRectExtension.swift in Sources */,
 				2D635AF7256703AA00AE924B /* BackdownTextFieldView.swift in Sources */,
 			);
@@ -391,7 +439,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S54DSEQWWH;
-				INFOPLIST_FILE = SeaBattle/Info.plist;
+				INFOPLIST_FILE = SeaBattle/Sources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -411,7 +459,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S54DSEQWWH;
-				INFOPLIST_FILE = SeaBattle/Info.plist;
+				INFOPLIST_FILE = SeaBattle/Sources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
