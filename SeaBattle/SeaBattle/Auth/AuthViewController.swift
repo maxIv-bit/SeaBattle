@@ -107,7 +107,7 @@ private extension AuthViewController {
     }
     
     @objc func signInButtonTouchUpInside(_ sender: UIButton) {
-        viewModel.signUp(email: emailTextField.text, password: passwordTextField.text)
+        viewModel.signIn(email: emailTextField.text, password: passwordTextField.text)
     }
     
     @objc func signUpButtonTouchUpInside(_ sender: UIButton) {

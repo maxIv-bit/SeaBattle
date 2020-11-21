@@ -9,7 +9,7 @@ import Foundation
 
 final class EmailChainHandler: BaseChainHandler {
     override func processRequest(parameters: [String : Any?]) {
-        guard let email = parameters["email"] as? String, Validator.shared.isValid(text: email, by: .email) else {
+        guard let email = parameters[AuthParameters.email] as? String, Validator.shared.isValid(text: email, by: .email) else {
             processError(error: StringError(message: Validator.shared.getInvalidText(rule: .email).message))
             return
         }

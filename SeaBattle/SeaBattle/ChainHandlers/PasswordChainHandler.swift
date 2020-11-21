@@ -9,7 +9,7 @@ import Foundation
 
 final class PasswordChainHandler: BaseChainHandler {
     override func processRequest(parameters: [String : Any?]) {
-        guard let password = parameters["password"] as? String, Validator.shared.isValid(text: password, by: .password) else {
+        guard let password = parameters[AuthParameters.password] as? String, Validator.shared.isValid(text: password, by: .password) else {
             processError(error: StringError(message: Validator.shared.getInvalidText(rule: .password).message))
             return
         }

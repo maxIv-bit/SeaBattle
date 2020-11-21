@@ -1,5 +1,5 @@
 //
-//  SignInChainHandler.swift
+//  LogOutChainHandler.swift
 //  SeaBattle
 //
 //  Created by Maks on 21.11.2020.
@@ -8,7 +8,7 @@
 import Foundation
 import Firebase
 
-final class SignInChainHandler: BaseChainHandler {
+final class LogOutChainHandler: BaseChainHandler {
     private let authRepository: AuthRepository
     
     var onSuccess: (() -> Void)?
@@ -18,13 +18,12 @@ final class SignInChainHandler: BaseChainHandler {
     }
     
     override func processRequest(parameters: [String : Any?]) {
-        authRepository.signIn(email: parameters[AuthParameters.email] as! String,
-                              password: parameters[AuthParameters.password] as! String) { [weak self] result in
+        authRepository.logOut { [weak self] result in
             switch result {
             case .success:
                 self?.onSuccess?()
             case .failure(let error):
-                self?.processError(error: error)
+                self?.onError?(error)
             }
         }
     }

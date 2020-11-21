@@ -12,22 +12,45 @@ import IQKeyboardManagerSwift
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+    private var authRepository = AuthRepositoryDefault()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = AuthViewController(viewModel: AuthViewModel())
-        window?.backgroundColor = .white
-        window?.makeKeyAndVisible()
-        
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         IQKeyboardManager.shared.enableAutoToolbar = false
         
+        start()
+        
         return true
     }
-
+    
+    func start() {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        Auth.auth().currentUser != nil ? showUsersOnline() : showAuth()
+        window?.backgroundColor = .white
+        window?.makeKeyAndVisible()
+    }
+    
+    func showAuth() {
+        let authViewModel = AuthViewModel(authRepository: authRepository)
+        let authViewController = AuthViewController(viewModel: authViewModel)
+        authViewModel.onSuccessfulLogIn = { [weak self] in
+            self?.showUsersOnline()
+        }
+        window?.rootViewController = authViewController
+    }
+    
+    func showUsersOnline() {
+        let usersOnlineViewModel = UsersOnlineViewModel(authRepository: authRepository)
+        let usersOnlineViewController = UsersOnlineViewController(viewModel: usersOnlineViewModel)
+        let navigation = UINavigationController(rootViewController: usersOnlineViewController)
+        usersOnlineViewModel.onLogOut = { [weak self] in
+            self?.showAuth()
+        }
+        window?.rootViewController = navigation
+    }
 }
 
