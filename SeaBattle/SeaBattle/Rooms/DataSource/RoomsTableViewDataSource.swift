@@ -1,5 +1,5 @@
 //
-//  UsersOnlineTableViewDataSource.swift
+//  RoomsTableViewDataSource.swift
 //  SeaBattle
 //
 //  Created by Maks on 21.11.2020.
@@ -7,18 +7,18 @@
 
 import UIKit
 
-final class UsersOnlineTableViewDataSource: TableViewDataSource<String> {
+final class RoomsTableViewDataSource: TableViewDataSource<Room> {
     override func configure() {
-        tableView.register(UsersOnlineTableViewCell.self)
+        tableView.register(RoomsTableViewCell.self)
         tableView.separatorStyle = .none
         tableView.allowsMultipleSelection = false
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(for: indexPath, with: UsersOnlineTableViewCell.self)
+        let cell = tableView.dequeueReusableCell(for: indexPath, with: RoomsTableViewCell.self)
         cell.selectionStyle = .none
-        let email = data[indexPath.row]
-        cell.configure(email: email)
+        let name = data[indexPath.row].name
+        cell.configure(name: name)
         return cell
     }
     

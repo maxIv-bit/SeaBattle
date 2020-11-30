@@ -9,6 +9,7 @@ import Foundation
 import Firebase
 
 protocol AuthRepository {
+    func getCurrentUser() -> User?
     func signUp(email: String, password: String, completion: ((Result<AuthDataResult, Error>) -> Void)?)
     func signIn(email: String, password: String, completion: ((Result<AuthDataResult, Error>) -> Void)?)
     func logOut(completion: ((Result<Void, Error>) -> Void)?)

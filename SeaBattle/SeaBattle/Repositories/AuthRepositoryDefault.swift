@@ -9,6 +9,10 @@ import Foundation
 import Firebase
 
 final class AuthRepositoryDefault: AuthRepository {
+    func getCurrentUser() -> User? {
+        Auth.auth().currentUser.map { User(authData: $0) }
+    }
+    
     func signUp(email: String, password: String, completion: ((Result<AuthDataResult, Error>) -> Void)?) {
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             if let authResult = authResult {

@@ -1,5 +1,5 @@
 //
-//  UsersOnlineTableViewCell.swift
+//  RoomsTableViewCell.swift
 //  SeaBattle
 //
 //  Created by Maks on 21.11.2020.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class UsersOnlineTableViewCell: TableViewCell {
+final class RoomsTableViewCell: TableViewCell {
     private lazy var titleLabel = UILabel()
     
     override func configure() {
@@ -15,12 +15,12 @@ final class UsersOnlineTableViewCell: TableViewCell {
         configureUI()
     }
     
-    func configure(email: String) {
-        titleLabel.text = email
+    func configure(name: String) {
+        titleLabel.text = name
     }
 }
 
-private extension UsersOnlineTableViewCell {
+private extension RoomsTableViewCell {
     func attachViews() {
         [titleLabel].forEach(contentView.addSubview)
         

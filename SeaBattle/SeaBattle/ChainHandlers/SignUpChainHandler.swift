@@ -11,7 +11,7 @@ import Firebase
 final class SignUpChainHandler: BaseChainHandler {
     private let authRepository: AuthRepository
     
-    var onSuccess: (() -> Void)?
+    var onSuccess: ((User) -> Void)?
     
     init(authRepository: AuthRepository) {
         self.authRepository = authRepository
@@ -21,8 +21,8 @@ final class SignUpChainHandler: BaseChainHandler {
         authRepository.signUp(email: parameters[AuthParameters.email] as! String,
                               password: parameters[AuthParameters.password] as! String) { [weak self] result in
             switch result {
-            case .success:
-                self?.onSuccess?()
+            case .success(let authData):
+                self?.onSuccess?(User(authData: authData.user))
             case .failure(let error):
                 self?.processError(error: error)
             }

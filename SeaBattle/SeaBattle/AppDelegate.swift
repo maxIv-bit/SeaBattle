@@ -13,6 +13,7 @@ import IQKeyboardManagerSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     private var authRepository = AuthRepositoryDefault()
+    private var roomsRepository = RoomsRepositoryDefault()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -29,7 +30,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func start() {
         window = UIWindow(frame: UIScreen.main.bounds)
-        Auth.auth().currentUser != nil ? showUsersOnline() : showAuth()
+        if let user = authRepository.getCurrentUser() {
+            showRooms(user: user)
+        } else {
+            showAuth()
+        }
         window?.backgroundColor = .white
         window?.makeKeyAndVisible()
     }
@@ -37,17 +42,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func showAuth() {
         let authViewModel = AuthViewModel(authRepository: authRepository)
         let authViewController = AuthViewController(viewModel: authViewModel)
-        authViewModel.onSuccessfulLogIn = { [weak self] in
-            self?.showUsersOnline()
+        authViewModel.onSuccessfulLogIn = { [weak self] user in
+            self?.showRooms(user: user)
         }
         window?.rootViewController = authViewController
     }
     
-    func showUsersOnline() {
-        let usersOnlineViewModel = UsersOnlineViewModel(authRepository: authRepository)
-        let usersOnlineViewController = UsersOnlineViewController(viewModel: usersOnlineViewModel)
-        let navigation = UINavigationController(rootViewController: usersOnlineViewController)
-        usersOnlineViewModel.onLogOut = { [weak self] in
+    func showRooms(user: User) {
+        let roomsViewModel = RoomsViewModel(currentUser: user, authRepository: authRepository, roomsRepository: roomsRepository)
+        let roomsViewController = RoomsViewController(viewModel: roomsViewModel)
+        let navigation = UINavigationController(rootViewController: roomsViewController)
+        roomsViewModel.onLogOut = { [weak self] in
             self?.showAuth()
         }
         window?.rootViewController = navigation

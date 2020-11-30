@@ -30,7 +30,7 @@ final class AuthViewModel: BaseViewModel {
     var onError: ((String) -> Void)?
     
     // MARK: - Callbacks
-    var onSuccessfulLogIn: (() -> Void)?
+    var onSuccessfulLogIn: ((User) -> Void)?
     
     override func launch() {
         emailHandler.nextHandler = passwordHandler

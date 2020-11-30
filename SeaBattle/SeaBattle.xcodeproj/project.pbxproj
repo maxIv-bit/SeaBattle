@@ -13,22 +13,31 @@
 		2D5A0B032569529900D725ED /* PasswordChainHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A0B022569529900D725ED /* PasswordChainHandler.swift */; };
 		2D5A0B06256952A600D725ED /* SignInChainHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A0B05256952A600D725ED /* SignInChainHandler.swift */; };
 		2D5A0B09256952B000D725ED /* SignUpChainHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A0B08256952B000D725ED /* SignUpChainHandler.swift */; };
-		2D5A0B0F25695D5300D725ED /* UsersOnlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A0B0E25695D5300D725ED /* UsersOnlineViewController.swift */; };
-		2D5A0B1325695D6A00D725ED /* UsersOnlineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A0B1225695D6A00D725ED /* UsersOnlineViewModel.swift */; };
+		2D5A0B0F25695D5300D725ED /* RoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A0B0E25695D5300D725ED /* RoomsViewController.swift */; };
+		2D5A0B1325695D6A00D725ED /* RoomsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A0B1225695D6A00D725ED /* RoomsViewModel.swift */; };
 		2D5A0B162569630600D725ED /* LogOutChainHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A0B152569630600D725ED /* LogOutChainHandler.swift */; };
 		2D5A0B1C25696B3300D725ED /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A0B1B25696B3300D725ED /* AuthRepository.swift */; };
 		2D5A0B2025696B7C00D725ED /* AuthRepositoryDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A0B1F25696B7C00D725ED /* AuthRepositoryDefault.swift */; };
 		2D5A0B272569831800D725ED /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A0B262569831800D725ED /* TableViewDataSource.swift */; };
-		2D5A0B2A2569834B00D725ED /* UsersOnlineTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A0B292569834B00D725ED /* UsersOnlineTableViewDataSource.swift */; };
+		2D5A0B2A2569834B00D725ED /* RoomsTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A0B292569834B00D725ED /* RoomsTableViewDataSource.swift */; };
 		2D5A0B2D256983FF00D725ED /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A0B2C256983FF00D725ED /* TableViewCell.swift */; };
 		2D5A0B302569842200D725ED /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A0B2F2569842200D725ED /* Reusable.swift */; };
 		2D5A0B332569846100D725ED /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A0B322569846100D725ED /* UITableViewExtension.swift */; };
-		2D5A0B36256984B600D725ED /* UsersOnlineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A0B35256984B600D725ED /* UsersOnlineTableViewCell.swift */; };
+		2D5A0B36256984B600D725ED /* RoomsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A0B35256984B600D725ED /* RoomsTableViewCell.swift */; };
 		2D5A0B4225698D6700D725ED /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A0B4125698D6700D725ED /* User.swift */; };
 		2D5A7B1B25640F1C00A7CC86 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A7B1A25640F1C00A7CC86 /* CALayerExtension.swift */; };
 		2D5A7B72256412C500A7CC86 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A7B71256412C500A7CC86 /* BaseViewController.swift */; };
 		2D5A7B75256412ED00A7CC86 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A7B74256412ED00A7CC86 /* BaseViewModel.swift */; };
 		2D5A7B7A256413C700A7CC86 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A7B79256413C700A7CC86 /* AuthViewModel.swift */; };
+		2D5A827A256EB46800C32F72 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A8279256EB46800C32F72 /* UserDefaultsWrapper.swift */; };
+		2D5A8286256EB66300C32F72 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A8285256EB66300C32F72 /* Observer.swift */; };
+		2D5A8289256EBBE000C32F72 /* RoomsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A8288256EBBE000C32F72 /* RoomsRepository.swift */; };
+		2D5A828C256EBBE600C32F72 /* RoomsRepositoryDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A828B256EBBE600C32F72 /* RoomsRepositoryDefault.swift */; };
+		2D5AEF462575035D0034F266 /* KeyDecodingContainerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5AEF452575035D0034F266 /* KeyDecodingContainerExtension.swift */; };
+		2D5AEF49257504930034F266 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5AEF48257504930034F266 /* Entity.swift */; };
+		2D5B2C6725756C6E00F83629 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5B2C6625756C6E00F83629 /* Room.swift */; };
+		2D5B2C6A25756C7900F83629 /* Boat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5B2C6925756C7900F83629 /* Boat.swift */; };
+		2D5B2C6D25756C8400F83629 /* BoatPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5B2C6C25756C8400F83629 /* BoatPosition.swift */; };
 		2D635AF32567036D00AE924B /* CGRectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D635AF22567036D00AE924B /* CGRectExtension.swift */; };
 		2D635AF7256703AA00AE924B /* BackdownTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D635AF6256703AA00AE924B /* BackdownTextFieldView.swift */; };
 		2D64CC532565A4A400AC8FD4 /* ChainHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D64CC522565A4A400AC8FD4 /* ChainHandler.swift */; };
@@ -51,23 +60,32 @@
 		2D5A0B022569529900D725ED /* PasswordChainHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChainHandler.swift; sourceTree = "<group>"; };
 		2D5A0B05256952A600D725ED /* SignInChainHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInChainHandler.swift; sourceTree = "<group>"; };
 		2D5A0B08256952B000D725ED /* SignUpChainHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpChainHandler.swift; sourceTree = "<group>"; };
-		2D5A0B0E25695D5300D725ED /* UsersOnlineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersOnlineViewController.swift; sourceTree = "<group>"; };
-		2D5A0B1225695D6A00D725ED /* UsersOnlineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersOnlineViewModel.swift; sourceTree = "<group>"; };
+		2D5A0B0E25695D5300D725ED /* RoomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsViewController.swift; sourceTree = "<group>"; };
+		2D5A0B1225695D6A00D725ED /* RoomsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsViewModel.swift; sourceTree = "<group>"; };
 		2D5A0B152569630600D725ED /* LogOutChainHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutChainHandler.swift; sourceTree = "<group>"; };
 		2D5A0B1B25696B3300D725ED /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
 		2D5A0B1F25696B7C00D725ED /* AuthRepositoryDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepositoryDefault.swift; sourceTree = "<group>"; };
 		2D5A0B262569831800D725ED /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
-		2D5A0B292569834B00D725ED /* UsersOnlineTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersOnlineTableViewDataSource.swift; sourceTree = "<group>"; };
+		2D5A0B292569834B00D725ED /* RoomsTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsTableViewDataSource.swift; sourceTree = "<group>"; };
 		2D5A0B2C256983FF00D725ED /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		2D5A0B2F2569842200D725ED /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		2D5A0B322569846100D725ED /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
-		2D5A0B35256984B600D725ED /* UsersOnlineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersOnlineTableViewCell.swift; sourceTree = "<group>"; };
+		2D5A0B35256984B600D725ED /* RoomsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsTableViewCell.swift; sourceTree = "<group>"; };
 		2D5A0B38256987A900D725ED /* SeaBattle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SeaBattle.entitlements; sourceTree = "<group>"; };
 		2D5A0B4125698D6700D725ED /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2D5A7B1A25640F1C00A7CC86 /* CALayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
 		2D5A7B71256412C500A7CC86 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		2D5A7B74256412ED00A7CC86 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		2D5A7B79256413C700A7CC86 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		2D5A8279256EB46800C32F72 /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
+		2D5A8285256EB66300C32F72 /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
+		2D5A8288256EBBE000C32F72 /* RoomsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsRepository.swift; sourceTree = "<group>"; };
+		2D5A828B256EBBE600C32F72 /* RoomsRepositoryDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsRepositoryDefault.swift; sourceTree = "<group>"; };
+		2D5AEF452575035D0034F266 /* KeyDecodingContainerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyDecodingContainerExtension.swift; sourceTree = "<group>"; };
+		2D5AEF48257504930034F266 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		2D5B2C6625756C6E00F83629 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		2D5B2C6925756C7900F83629 /* Boat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boat.swift; sourceTree = "<group>"; };
+		2D5B2C6C25756C8400F83629 /* BoatPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoatPosition.swift; sourceTree = "<group>"; };
 		2D635AF22567036D00AE924B /* CGRectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRectExtension.swift; sourceTree = "<group>"; };
 		2D635AF6256703AA00AE924B /* BackdownTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackdownTextFieldView.swift; sourceTree = "<group>"; };
 		2D64CC522565A4A400AC8FD4 /* ChainHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainHandler.swift; sourceTree = "<group>"; };
@@ -103,6 +121,8 @@
 				2D64CC572565AD2D00AC8FD4 /* Validator.swift */,
 				2D5A0A94256946B500D725ED /* Errors.swift */,
 				2D5A0B2F2569842200D725ED /* Reusable.swift */,
+				2D5A8279256EB46800C32F72 /* UserDefaultsWrapper.swift */,
+				2D5A8285256EB66300C32F72 /* Observer.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -140,21 +160,21 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
-		2D5A0B0D25695B8500D725ED /* UsersOnline */ = {
+		2D5A0B0D25695B8500D725ED /* Rooms */ = {
 			isa = PBXGroup;
 			children = (
-				2D5A0B0E25695D5300D725ED /* UsersOnlineViewController.swift */,
-				2D5A0B1225695D6A00D725ED /* UsersOnlineViewModel.swift */,
-				2D5A0B292569834B00D725ED /* UsersOnlineTableViewDataSource.swift */,
-				2D5A0B35256984B600D725ED /* UsersOnlineTableViewCell.swift */,
+				2D5A827C256EB4EA00C32F72 /* DataSource */,
+				2D5A0B0E25695D5300D725ED /* RoomsViewController.swift */,
+				2D5A0B1225695D6A00D725ED /* RoomsViewModel.swift */,
 			);
-			path = UsersOnline;
+			path = Rooms;
 			sourceTree = "<group>";
 		};
 		2D5A0B1925696B0500D725ED /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
 				2D5A0B1F25696B7C00D725ED /* AuthRepositoryDefault.swift */,
+				2D5A828B256EBBE600C32F72 /* RoomsRepositoryDefault.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -163,16 +183,21 @@
 			isa = PBXGroup;
 			children = (
 				2D5A0B1B25696B3300D725ED /* AuthRepository.swift */,
+				2D5A8288256EBBE000C32F72 /* RoomsRepository.swift */,
 			);
 			path = RepositoryInterfaces;
 			sourceTree = "<group>";
 		};
-		2D5A0B4025698D5C00D725ED /* Models */ = {
+		2D5A0B4025698D5C00D725ED /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				2D5AEF48257504930034F266 /* Entity.swift */,
 				2D5A0B4125698D6700D725ED /* User.swift */,
+				2D5B2C6625756C6E00F83629 /* Room.swift */,
+				2D5B2C6925756C7900F83629 /* Boat.swift */,
+				2D5B2C6C25756C8400F83629 /* BoatPosition.swift */,
 			);
-			path = Models;
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		2D5A7B7F256416A700A7CC86 /* Extensions */ = {
@@ -183,6 +208,7 @@
 				2D64CC5E2565B00B00AC8FD4 /* UIAlertContollerExtension.swift */,
 				2D635AF22567036D00AE924B /* CGRectExtension.swift */,
 				2D5A0B322569846100D725ED /* UITableViewExtension.swift */,
+				2D5AEF452575035D0034F266 /* KeyDecodingContainerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -200,9 +226,26 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		2D5A827C256EB4EA00C32F72 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				2D5A0B292569834B00D725ED /* RoomsTableViewDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		2D5A827D256EB4FB00C32F72 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				2D5A0B35256984B600D725ED /* RoomsTableViewCell.swift */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
 		2D635AF52567039000AE924B /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				2D5A827D256EB4FB00C32F72 /* TableViewCells */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -233,9 +276,9 @@
 				2D635AF52567039000AE924B /* Custom */,
 				2D5A7B80256416C000A7CC86 /* Base */,
 				2D5A0B0C25695B7700D725ED /* Auth */,
-				2D5A0B0D25695B8500D725ED /* UsersOnline */,
+				2D5A0B0D25695B8500D725ED /* Rooms */,
 				2D5A0AFE2569527A00D725ED /* ChainHandlers */,
-				2D5A0B4025698D5C00D725ED /* Models */,
+				2D5A0B4025698D5C00D725ED /* Entities */,
 				2D5A0B1A25696B1100D725ED /* RepositoryInterfaces */,
 				2D5A0B1925696B0500D725ED /* Repositories */,
 				2D5A0A90256942D400D725ED /* Helpers */,
@@ -362,9 +405,9 @@
 				2D64CC582565AD2D00AC8FD4 /* Validator.swift in Sources */,
 				2D5A7B72256412C500A7CC86 /* BaseViewController.swift in Sources */,
 				2D5A0B162569630600D725ED /* LogOutChainHandler.swift in Sources */,
-				2D5A0B36256984B600D725ED /* UsersOnlineTableViewCell.swift in Sources */,
-				2D5A0B0F25695D5300D725ED /* UsersOnlineViewController.swift in Sources */,
-				2D5A0B2A2569834B00D725ED /* UsersOnlineTableViewDataSource.swift in Sources */,
+				2D5A0B36256984B600D725ED /* RoomsTableViewCell.swift in Sources */,
+				2D5A0B0F25695D5300D725ED /* RoomsViewController.swift in Sources */,
+				2D5A0B2A2569834B00D725ED /* RoomsTableViewDataSource.swift in Sources */,
 				2D64CC5C2565AFE300AC8FD4 /* UIViewControllerExtension.swift in Sources */,
 				2D5A0B332569846100D725ED /* UITableViewExtension.swift in Sources */,
 				2D5A0B4225698D6700D725ED /* User.swift in Sources */,
@@ -373,20 +416,29 @@
 				2D77EE43256066AD000DA5A2 /* AuthViewController.swift in Sources */,
 				2D5A0B2025696B7C00D725ED /* AuthRepositoryDefault.swift in Sources */,
 				2D5A0B002569528D00D725ED /* EmailChainHandler.swift in Sources */,
+				2D5B2C6725756C6E00F83629 /* Room.swift in Sources */,
 				2D5A7B1B25640F1C00A7CC86 /* CALayerExtension.swift in Sources */,
 				2D5A7B7A256413C700A7CC86 /* AuthViewModel.swift in Sources */,
+				2D5AEF49257504930034F266 /* Entity.swift in Sources */,
+				2D5B2C6D25756C8400F83629 /* BoatPosition.swift in Sources */,
+				2D5A8289256EBBE000C32F72 /* RoomsRepository.swift in Sources */,
+				2D5A827A256EB46800C32F72 /* UserDefaultsWrapper.swift in Sources */,
 				2D5A0A95256946B500D725ED /* Errors.swift in Sources */,
 				2D5A0B032569529900D725ED /* PasswordChainHandler.swift in Sources */,
+				2D5A8286256EB66300C32F72 /* Observer.swift in Sources */,
 				2D77EE3F256066AD000DA5A2 /* AppDelegate.swift in Sources */,
 				2D5A0B06256952A600D725ED /* SignInChainHandler.swift in Sources */,
 				2D5A0B272569831800D725ED /* TableViewDataSource.swift in Sources */,
 				2D64CC532565A4A400AC8FD4 /* ChainHandler.swift in Sources */,
-				2D5A0B1325695D6A00D725ED /* UsersOnlineViewModel.swift in Sources */,
+				2D5A0B1325695D6A00D725ED /* RoomsViewModel.swift in Sources */,
 				2D5A7B75256412ED00A7CC86 /* BaseViewModel.swift in Sources */,
 				2D5A0B2D256983FF00D725ED /* TableViewCell.swift in Sources */,
 				2D5A0B09256952B000D725ED /* SignUpChainHandler.swift in Sources */,
+				2D5A828C256EBBE600C32F72 /* RoomsRepositoryDefault.swift in Sources */,
 				2D5A0B1C25696B3300D725ED /* AuthRepository.swift in Sources */,
 				2D635AF32567036D00AE924B /* CGRectExtension.swift in Sources */,
+				2D5AEF462575035D0034F266 /* KeyDecodingContainerExtension.swift in Sources */,
+				2D5B2C6A25756C7900F83629 /* Boat.swift in Sources */,
 				2D635AF7256703AA00AE924B /* BackdownTextFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
