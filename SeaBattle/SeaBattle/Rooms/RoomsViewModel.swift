@@ -30,6 +30,7 @@ final class RoomsViewModel: BaseViewModel {
     
     // MARK: - Callbacks
     var onLogOut: (() -> Void)?
+    var shouldShowGame: ((Room) -> Void)?
     
     override func launch() {
         configureBindings()
@@ -49,7 +50,8 @@ final class RoomsViewModel: BaseViewModel {
     }
     
     func connectToRoom(at indexPath: IndexPath) {
-        roomsRepository.connectToRoom(self.rooms[indexPath.row], user: currentUser, boats: boatDirector.constructBoatsOnStart(userId: currentUser.id))
+        shouldShowGame?(self.rooms[indexPath.row])
+//        roomsRepository.connectToRoom(self.rooms[indexPath.row], user: currentUser, boats: boatDirector.constructBoatsOnStart(userId: currentUser.id))
     }
 }
 

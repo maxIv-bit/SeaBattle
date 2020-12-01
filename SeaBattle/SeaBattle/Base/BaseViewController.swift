@@ -48,8 +48,6 @@ class BaseViewController<T: BaseViewModel>: UIViewController {
             viewWillAppearWasCalled = true
         }
         
-        navigationController?.setNavigationBarHidden(true, animated: false)
-        
         if !self.viewWillAppearWasCalled {
             viewModel.launch()
             performOnceInViewWillAppear()

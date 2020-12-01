@@ -55,7 +55,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         roomsViewModel.onLogOut = { [weak self] in
             self?.showAuth()
         }
+        roomsViewModel.shouldShowGame = { [weak self, weak navigation] room in
+            self?.showGame(room: room, navigation: navigation)
+        }
         window?.rootViewController = navigation
+    }
+    
+    func showGame(room: Room, navigation: UINavigationController?) {
+        let gameViewModel = GameViewModel(roomsRepository: roomsRepository, room: room)
+        let gameViewController = GameViewController(viewModel: gameViewModel)
+        navigation?.pushViewController(gameViewController, animated: true)
     }
 }
 
