@@ -14,9 +14,9 @@ final class Boat: Entity {
         length
     }
     
-    private(set) var userId: String
-    private(set) var positions = [String: BoatPosition]()
-    private(set) var length: Int
+    var userId: String
+    var positions = [String: BoatPosition]()
+    var length: Int
     
     init(id: String, userId: String, positions: [String: BoatPosition], length: Int) {
         self.userId = userId

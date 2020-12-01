@@ -74,4 +74,8 @@ final class RoomsRepositoryDefault: RoomsRepository {
     func disconnectFromRoom() {
         
     }
+    
+    func updateBoatPosition(roomId: String, userId: String, boatId: String, positionId: String) {
+        self.roomsRef.child(roomId).child("boats").child(userId).child(boatId).child("positions").child(positionId).setValue(["is_hurt": true])
+    }
 }

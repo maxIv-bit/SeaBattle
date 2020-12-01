@@ -14,9 +14,9 @@ final class Room: Entity {
         boats
     }
     
-    private(set) var players = [String: User]()
-    private(set) var name: String
-    private(set) var boats = [String: [String: Boat]]()
+    var players = [String: User]()
+    var name: String
+    var boats = [String: [String: Boat]]()
     
     init(id: String, players: [String: User], name: String, boats: [String: [String: Boat]]) {
         self.players = players

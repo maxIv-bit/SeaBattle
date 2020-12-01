@@ -14,6 +14,7 @@ final class RoomsViewModel: BaseViewModel {
     private let roomsRepository: RoomsRepository
     private lazy var logOutHandler = LogOutChainHandler(authRepository: authRepository)
     private lazy var rooms: [Room] = []
+    private lazy var boatDirector = Director(builder: BoatBuilder())
     
     init(currentUser: User,
          authRepository: AuthRepository,
@@ -32,6 +33,11 @@ final class RoomsViewModel: BaseViewModel {
     
     override func launch() {
         configureBindings()
+        
+        //        if let room = self.rooms.first,
+        //           let position = room.boats[self.currentUser.id]?.values.first?.positions.first?.value {
+        //            self.roomsRepository.updateBoatPosition(roomId: room.id, userId: self.currentUser.id, boatId: position.boatId, positionId: position.id)
+        //        }
     }
     
     func logOut() {
@@ -39,15 +45,11 @@ final class RoomsViewModel: BaseViewModel {
     }
     
     func createRoom(name: String) {
-        let boatId = UUID().uuidString
-        let boatPositionId = UUID().uuidString
-        roomsRepository.configureRoom(with: name, user: currentUser, boats: [Boat(id: boatId, userId: currentUser.id, positions: [boatPositionId: BoatPosition(id: boatPositionId, boatId: boatId, x: "A", y: 1, isHurt: false)], length: 1)])
+        roomsRepository.configureRoom(with: name, user: currentUser, boats: boatDirector.constructBoatsOnStart(userId: currentUser.id))
     }
     
     func connectToRoom(at indexPath: IndexPath) {
-        let boatId = UUID().uuidString
-        let boatPositionId = UUID().uuidString
-        roomsRepository.connectToRoom(self.rooms[indexPath.row], user: currentUser, boats: [Boat(id: boatId, userId: currentUser.id, positions: [boatPositionId: BoatPosition(id: boatPositionId, boatId: boatId, x: "A", y: 1, isHurt: false)], length: 1)])
+        roomsRepository.connectToRoom(self.rooms[indexPath.row], user: currentUser, boats: boatDirector.constructBoatsOnStart(userId: currentUser.id))
     }
 }
 

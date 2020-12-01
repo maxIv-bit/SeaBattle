@@ -38,6 +38,9 @@
 		2D5B2C6725756C6E00F83629 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5B2C6625756C6E00F83629 /* Room.swift */; };
 		2D5B2C6A25756C7900F83629 /* Boat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5B2C6925756C7900F83629 /* Boat.swift */; };
 		2D5B2C6D25756C8400F83629 /* BoatPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5B2C6C25756C8400F83629 /* BoatPosition.swift */; };
+		2D5BD96B257674DA000160CB /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5BD96A257674DA000160CB /* Builder.swift */; };
+		2D5BD96E257675AA000160CB /* BoatBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5BD96D257675AA000160CB /* BoatBuilder.swift */; };
+		2D5BD971257678E5000160CB /* Director.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5BD970257678E5000160CB /* Director.swift */; };
 		2D635AF32567036D00AE924B /* CGRectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D635AF22567036D00AE924B /* CGRectExtension.swift */; };
 		2D635AF7256703AA00AE924B /* BackdownTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D635AF6256703AA00AE924B /* BackdownTextFieldView.swift */; };
 		2D64CC532565A4A400AC8FD4 /* ChainHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D64CC522565A4A400AC8FD4 /* ChainHandler.swift */; };
@@ -86,6 +89,9 @@
 		2D5B2C6625756C6E00F83629 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		2D5B2C6925756C7900F83629 /* Boat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boat.swift; sourceTree = "<group>"; };
 		2D5B2C6C25756C8400F83629 /* BoatPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoatPosition.swift; sourceTree = "<group>"; };
+		2D5BD96A257674DA000160CB /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
+		2D5BD96D257675AA000160CB /* BoatBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoatBuilder.swift; sourceTree = "<group>"; };
+		2D5BD970257678E5000160CB /* Director.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Director.swift; sourceTree = "<group>"; };
 		2D635AF22567036D00AE924B /* CGRectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRectExtension.swift; sourceTree = "<group>"; };
 		2D635AF6256703AA00AE924B /* BackdownTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackdownTextFieldView.swift; sourceTree = "<group>"; };
 		2D64CC522565A4A400AC8FD4 /* ChainHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainHandler.swift; sourceTree = "<group>"; };
@@ -242,6 +248,16 @@
 			path = TableViewCells;
 			sourceTree = "<group>";
 		};
+		2D5BD96125767387000160CB /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				2D5BD96A257674DA000160CB /* Builder.swift */,
+				2D5BD96D257675AA000160CB /* BoatBuilder.swift */,
+				2D5BD970257678E5000160CB /* Director.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
 		2D635AF52567039000AE924B /* Custom */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,6 +294,7 @@
 				2D5A0B0C25695B7700D725ED /* Auth */,
 				2D5A0B0D25695B8500D725ED /* Rooms */,
 				2D5A0AFE2569527A00D725ED /* ChainHandlers */,
+				2D5BD96125767387000160CB /* Builder */,
 				2D5A0B4025698D5C00D725ED /* Entities */,
 				2D5A0B1A25696B1100D725ED /* RepositoryInterfaces */,
 				2D5A0B1925696B0500D725ED /* Repositories */,
@@ -403,8 +420,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D64CC582565AD2D00AC8FD4 /* Validator.swift in Sources */,
+				2D5BD96E257675AA000160CB /* BoatBuilder.swift in Sources */,
 				2D5A7B72256412C500A7CC86 /* BaseViewController.swift in Sources */,
 				2D5A0B162569630600D725ED /* LogOutChainHandler.swift in Sources */,
+				2D5BD971257678E5000160CB /* Director.swift in Sources */,
 				2D5A0B36256984B600D725ED /* RoomsTableViewCell.swift in Sources */,
 				2D5A0B0F25695D5300D725ED /* RoomsViewController.swift in Sources */,
 				2D5A0B2A2569834B00D725ED /* RoomsTableViewDataSource.swift in Sources */,
@@ -422,6 +441,7 @@
 				2D5AEF49257504930034F266 /* Entity.swift in Sources */,
 				2D5B2C6D25756C8400F83629 /* BoatPosition.swift in Sources */,
 				2D5A8289256EBBE000C32F72 /* RoomsRepository.swift in Sources */,
+				2D5BD96B257674DA000160CB /* Builder.swift in Sources */,
 				2D5A827A256EB46800C32F72 /* UserDefaultsWrapper.swift in Sources */,
 				2D5A0A95256946B500D725ED /* Errors.swift in Sources */,
 				2D5A0B032569529900D725ED /* PasswordChainHandler.swift in Sources */,

@@ -15,10 +15,10 @@ final class BoatPosition: Entity {
         isHurt = "is_hurt"
     }
     
-    private(set) var boatId: String
-    private(set) var x: String
-    private(set) var y: Int
-    private(set) var isHurt: Bool
+    var boatId: String
+    var x: String
+    var y: Int
+    var isHurt: Bool
     
     init(id: String, boatId: String, x: String, y: Int, isHurt: Bool) {
         self.x = x

@@ -13,7 +13,7 @@ final class User: Entity {
         case email
     }
     
-    private(set) var email: String
+    var email: String
     
     init(authData: Firebase.User) {
         email = authData.email ?? ""
