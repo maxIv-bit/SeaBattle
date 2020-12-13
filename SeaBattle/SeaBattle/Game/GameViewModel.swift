@@ -10,7 +10,10 @@ import Foundation
 final class GameViewModel: BaseViewModel {
     private let roomsRepository: RoomsRepository
     private var room: Room
-    private lazy var fieldCells = [FieldCell]()
+    private (set) var firstUserBoats = [Boat]()
+    private (set) var firstUserPositions = Set<Position>()
+    private (set) var secondUserBoats = [Boat]()
+    private (set) var secondUserPositions = Set<Position>()
     
     init(roomsRepository: RoomsRepository, room: Room) {
         self.room = room
@@ -18,54 +21,38 @@ final class GameViewModel: BaseViewModel {
     }
     
     // MARK: - Bindings
-    var didReceieveFieldCells: (([FieldCell]) -> Void)?
-    var didReceieveBoats: (([Boat]) -> Void)?
+    var didReceivePositions: (([Position]) -> Void)?
     
     override func launch() {
-        var fieldCells = [FieldCell]()
-        for y in 1...10 {
-            for x in 1...10 {
-                fieldCells.append(FieldCell(positions: [Position(x: x, y: y)], isShot: false, isBoat: false))
-            }
+        if let userId = room.players["user1"]?.id,
+           let boats = room.boats[userId]?.values {
+            firstUserBoats = Array(boats)
         }
         
-        if let userId = room.players["user1"]?.id, let boats = room.boats[userId]?.values {
-            didReceieveBoats?(Array(boats))
-            var positions = [[Position]]()
-            for boat in boats.sorted(by: { $0.positions.values.first?.x ?? 0 < $1.positions.values.first?.x ?? 0 }) {
-                let boatPositions = boat.positions.values.sorted(by: { $0.x < $1.x || $0.y < $1.y }).map { Position(x: $0.x, y: $0.y) }
-                positions.append(boatPositions)
-                
-                var indecies = [Int]()
-                var i = 0
-                while i < fieldCells.count {
-                    if Set(fieldCells[i].positions).isSubset(of: Set(boatPositions))  {
-                        indecies.append(i)
-                    }
-                    i += 1
-                }
-
-                indecies.forEach {
-                    fieldCells.remove(at: $0)
-                }
-            }
-            
-            var indecies = [(Int, [Position])]()
-            for positions in positions {
-                var x = 0
-                var y = 0
-                if let firstPosition = positions.first {
-                    x = (firstPosition.x - 1)
-                    y = (firstPosition.y - 1) * 10
-                }
-                indecies.append((x + y, positions))
-            }
-            
-            for i in indecies.sorted(by: { $0.0 < $1.0 }) {
-                fieldCells.insert(FieldCell(positions: i.1, isShot: false, isBoat: true), at: i.0)
-            }
+        if let userId = room.players["user2"]?.id,
+           let boats = room.boats[userId]?.values {
+            secondUserBoats = Array(boats)
         }
         
-        didReceieveFieldCells?(fieldCells)
+        for x in 1...10 {
+            for y in 1...10 {
+                firstUserPositions.insert(Position(x: x, y: y, isShot: false))
+                secondUserPositions.insert(Position(x: x, y: y, isShot: false))
+            }
+        }
+    }
+    
+    func shoot(x: Int, y: Int) {
+        guard let position = firstUserPositions.first(where: { $0.x == x && $0.y == y }) else {
+            return
+        }
+        
+        guard !position.isShot else {
+            return
+        }
+        
+        position.isShot = true
+        
+        didReceivePositions?(Array(firstUserPositions))
     }
 }

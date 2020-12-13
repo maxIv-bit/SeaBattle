@@ -17,7 +17,7 @@ final class GameCollectionViewDataSource: CollectionViewDataSource<FieldCell> {
     override func configure() {
         collectionView.backgroundColor = .white
         collectionView.register(FieldCellCollectionViewCell.self)
-        if let layout = collectionView.collectionViewLayout as? PinterestLayout {
+        if let layout = collectionView.collectionViewLayout as? GameLayout {
             layout.delegate = self
         }
         collectionView.dragDelegate = self
@@ -114,7 +114,7 @@ extension GameCollectionViewDataSource: UICollectionViewDropDelegate {
     }
 }
 
-extension GameCollectionViewDataSource: PinterestLayoutDelegate {
+extension GameCollectionViewDataSource: GameLayoutDelegate {
     func collectionView(_ collectionView: UICollectionView, heightForIndexPath indexPath: IndexPath) -> CGFloat {
         let side = ((collectionView.bounds.width - Constants.edgeInsets.horizontal) - (Constants.spaceBetweenCells * (Constants.columnsCount - 1))) / Constants.columnsCount
         return CGFloat(data[indexPath.row].positions.count) * side
@@ -126,12 +126,12 @@ extension GameCollectionViewDataSource: PinterestLayoutDelegate {
     }
 }
 
-protocol PinterestLayoutDelegate: AnyObject {
+protocol GameLayoutDelegate: AnyObject {
     func collectionView(_ collectionView: UICollectionView, heightForIndexPath indexPath: IndexPath) -> CGFloat
     func collectionView(_ collectionView: UICollectionView, widthForIndexPath indexPath: IndexPath) -> CGFloat
 }
 
-class PinterestLayout: UICollectionViewLayout {
+class GameLayout: UICollectionViewLayout {
     lazy var data = [FieldCell]()
     
     init(data: [FieldCell]) {
@@ -143,7 +143,7 @@ class PinterestLayout: UICollectionViewLayout {
         super.init(coder: coder)
     }
     
-    weak var delegate: PinterestLayoutDelegate?
+    weak var delegate: GameLayoutDelegate?
     private let numberOfColumns = 10
     private let numberOfRows = 10
     private let cellPadding: CGFloat = 2

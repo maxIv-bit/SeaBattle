@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D4D3E10258663230082C1A4 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D3E0F258663230082C1A4 /* GameView.swift */; };
 		2D5A0A8B25692DF200D725ED /* SeaBattleIntroScreen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D5A0A8A25692DF200D725ED /* SeaBattleIntroScreen.jpg */; };
 		2D5A0A95256946B500D725ED /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A0A94256946B500D725ED /* Errors.swift */; };
 		2D5A0B002569528D00D725ED /* EmailChainHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A0AFF2569528D00D725ED /* EmailChainHandler.swift */; };
@@ -42,8 +43,11 @@
 		2D5BD96B257674DA000160CB /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5BD96A257674DA000160CB /* Builder.swift */; };
 		2D5BD96E257675AA000160CB /* BoatBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5BD96D257675AA000160CB /* BoatBuilder.swift */; };
 		2D5BD971257678E5000160CB /* Director.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5BD970257678E5000160CB /* Director.swift */; };
-		2D5D02F525829E4B0033BEED /* BattleFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D02F425829E4B0033BEED /* BattleFieldView.swift */; };
+		2D5D02F525829E4B0033BEED /* BattleFieldCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D02F425829E4B0033BEED /* BattleFieldCellView.swift */; };
 		2D5D02F82582A75F0033BEED /* BoatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D02F72582A75F0033BEED /* BoatView.swift */; };
+		2D5EBE8B2586472800A8AD05 /* BattleFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5EBE8A2586472800A8AD05 /* BattleFieldView.swift */; };
+		2D5EBE8F258648DB00A8AD05 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5EBE8E258648DB00A8AD05 /* View.swift */; };
+		2D5EBE93258651D900A8AD05 /* CoordinateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5EBE92258651D900A8AD05 /* CoordinateView.swift */; };
 		2D635AF32567036D00AE924B /* CGRectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D635AF22567036D00AE924B /* CGRectExtension.swift */; };
 		2D635AF7256703AA00AE924B /* BackdownTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D635AF6256703AA00AE924B /* BackdownTextFieldView.swift */; };
 		2D64CC532565A4A400AC8FD4 /* ChainHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D64CC522565A4A400AC8FD4 /* ChainHandler.swift */; };
@@ -69,6 +73,7 @@
 
 /* Begin PBXFileReference section */
 		23BEB001B3C4744876A5B371 /* libPods-SeaBattle.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SeaBattle.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D4D3E0F258663230082C1A4 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		2D5A0A8A25692DF200D725ED /* SeaBattleIntroScreen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SeaBattleIntroScreen.jpg; sourceTree = "<group>"; };
 		2D5A0A94256946B500D725ED /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		2D5A0AFF2569528D00D725ED /* EmailChainHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailChainHandler.swift; sourceTree = "<group>"; };
@@ -105,8 +110,11 @@
 		2D5BD96A257674DA000160CB /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		2D5BD96D257675AA000160CB /* BoatBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoatBuilder.swift; sourceTree = "<group>"; };
 		2D5BD970257678E5000160CB /* Director.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Director.swift; sourceTree = "<group>"; };
-		2D5D02F425829E4B0033BEED /* BattleFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleFieldView.swift; sourceTree = "<group>"; };
+		2D5D02F425829E4B0033BEED /* BattleFieldCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleFieldCellView.swift; sourceTree = "<group>"; };
 		2D5D02F72582A75F0033BEED /* BoatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoatView.swift; sourceTree = "<group>"; };
+		2D5EBE8A2586472800A8AD05 /* BattleFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleFieldView.swift; sourceTree = "<group>"; };
+		2D5EBE8E258648DB00A8AD05 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		2D5EBE92258651D900A8AD05 /* CoordinateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateView.swift; sourceTree = "<group>"; };
 		2D635AF22567036D00AE924B /* CGRectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRectExtension.swift; sourceTree = "<group>"; };
 		2D635AF6256703AA00AE924B /* BackdownTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackdownTextFieldView.swift; sourceTree = "<group>"; };
 		2D64CC522565A4A400AC8FD4 /* ChainHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainHandler.swift; sourceTree = "<group>"; };
@@ -145,6 +153,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D4D3E13258667450082C1A4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2D4D3E0F258663230082C1A4 /* GameView.swift */,
+				2D5EBE92258651D900A8AD05 /* CoordinateView.swift */,
+				2D5EBE8A2586472800A8AD05 /* BattleFieldView.swift */,
+				2D5D02F425829E4B0033BEED /* BattleFieldCellView.swift */,
+				2D5D02F72582A75F0033BEED /* BoatView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		2D5A0A90256942D400D725ED /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,14 +270,13 @@
 		2D5A7B80256416C000A7CC86 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				2D5EBE8E258648DB00A8AD05 /* View.swift */,
 				2D5A7B71256412C500A7CC86 /* BaseViewController.swift */,
+				2D5EBE95258651FE00A8AD05 /* TableView */,
+				2D5EBE962586520400A8AD05 /* CollectionView */,
 				2D635AF6256703AA00AE924B /* BackdownTextFieldView.swift */,
 				2D5A7B74256412ED00A7CC86 /* BaseViewModel.swift */,
 				2D64CC522565A4A400AC8FD4 /* ChainHandler.swift */,
-				2D5A0B262569831800D725ED /* TableViewDataSource.swift */,
-				2D5A0B2C256983FF00D725ED /* TableViewCell.swift */,
-				2D66E5F12576B6C9003E6D97 /* CollectionViewDataSource.swift */,
-				2D66E5F42576B6D3003E6D97 /* CollectionViewCell.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -288,13 +307,22 @@
 			path = Builder;
 			sourceTree = "<group>";
 		};
-		2D5D02F325829E360033BEED /* BattleField */ = {
+		2D5EBE95258651FE00A8AD05 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
-				2D5D02F425829E4B0033BEED /* BattleFieldView.swift */,
-				2D5D02F72582A75F0033BEED /* BoatView.swift */,
+				2D5A0B262569831800D725ED /* TableViewDataSource.swift */,
+				2D5A0B2C256983FF00D725ED /* TableViewCell.swift */,
 			);
-			path = BattleField;
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		2D5EBE962586520400A8AD05 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				2D66E5F12576B6C9003E6D97 /* CollectionViewDataSource.swift */,
+				2D66E5F42576B6D3003E6D97 /* CollectionViewCell.swift */,
+			);
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 		2D635AF52567039000AE924B /* Custom */ = {
@@ -309,6 +337,7 @@
 		2D66E5E42576B5D1003E6D97 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				2D4D3E13258667450082C1A4 /* Views */,
 				2D66E5EC2576B65E003E6D97 /* DataSource */,
 				2D66E5E52576B5EC003E6D97 /* GameViewController.swift */,
 				2D66E5E92576B5F3003E6D97 /* GameViewModel.swift */,
@@ -360,7 +389,6 @@
 				2D5A0B0C25695B7700D725ED /* Auth */,
 				2D5A0B0D25695B8500D725ED /* Rooms */,
 				2D66E5E42576B5D1003E6D97 /* Game */,
-				2D5D02F325829E360033BEED /* BattleField */,
 				2D5A0AFE2569527A00D725ED /* ChainHandlers */,
 				2D5BD96125767387000160CB /* Builder */,
 				2D5A0B4025698D5C00D725ED /* Entities */,
@@ -500,6 +528,7 @@
 				2D5A0B2A2569834B00D725ED /* RoomsTableViewDataSource.swift in Sources */,
 				2D64CC5C2565AFE300AC8FD4 /* UIViewControllerExtension.swift in Sources */,
 				2D5D02F82582A75F0033BEED /* BoatView.swift in Sources */,
+				2D4D3E10258663230082C1A4 /* GameView.swift in Sources */,
 				2D5A0B332569846100D725ED /* UITableViewExtension.swift in Sources */,
 				2D5A0B4225698D6700D725ED /* User.swift in Sources */,
 				2D5A0B302569842200D725ED /* Reusable.swift in Sources */,
@@ -527,8 +556,10 @@
 				2D64CC532565A4A400AC8FD4 /* ChainHandler.swift in Sources */,
 				2D66E5EA2576B5F3003E6D97 /* GameViewModel.swift in Sources */,
 				2D5A0B1325695D6A00D725ED /* RoomsViewModel.swift in Sources */,
-				2D5D02F525829E4B0033BEED /* BattleFieldView.swift in Sources */,
+				2D5D02F525829E4B0033BEED /* BattleFieldCellView.swift in Sources */,
 				2D5A7B75256412ED00A7CC86 /* BaseViewModel.swift in Sources */,
+				2D5EBE93258651D900A8AD05 /* CoordinateView.swift in Sources */,
+				2D5EBE8F258648DB00A8AD05 /* View.swift in Sources */,
 				2D5A0B2D256983FF00D725ED /* TableViewCell.swift in Sources */,
 				2D5A0B09256952B000D725ED /* SignUpChainHandler.swift in Sources */,
 				2D5B4C5A257D5A1C006520B4 /* UIViewExtension.swift in Sources */,
@@ -540,6 +571,7 @@
 				2D66E5EE2576B680003E6D97 /* GameCollectionViewDataSource.swift in Sources */,
 				2D5B2C6A25756C7900F83629 /* Boat.swift in Sources */,
 				2D635AF7256703AA00AE924B /* BackdownTextFieldView.swift in Sources */,
+				2D5EBE8B2586472800A8AD05 /* BattleFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

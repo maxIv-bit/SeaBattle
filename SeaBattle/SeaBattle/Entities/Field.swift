@@ -10,10 +10,12 @@ import Foundation
 final class Position: Hashable, Equatable {
     var x: Int
     var y: Int
+    var isShot: Bool
     
-    init(x: Int, y: Int) {
+    init(x: Int, y: Int, isShot: Bool) {
         self.x = x
         self.y = y
+        self.isShot = isShot
     }
     
     static func == (lhs: Position, rhs: Position) -> Bool {
