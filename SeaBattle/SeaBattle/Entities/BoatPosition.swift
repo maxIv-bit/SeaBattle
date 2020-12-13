@@ -16,15 +16,16 @@ final class BoatPosition: Entity {
     }
     
     var boatId: String
-    var x: String
+    var x: Int
     var y: Int
     var isHurt: Bool
     
-    init(id: String, boatId: String, x: String, y: Int, isHurt: Bool) {
+    init(id: String, boatId: String, x: Int, y: Int, isHurt: Bool) {
         self.x = x
         self.y = y
         self.isHurt = isHurt
         self.boatId = boatId
+        
         super.init(id: id)
     }
     
@@ -48,5 +49,9 @@ final class BoatPosition: Entity {
         try container.encode(self.boatId, forKey: .boatId)
         
         try super.encode(to: encoder)
+    }
+    
+    override var description: String {
+        "\(x)-\(y)"
     }
 }

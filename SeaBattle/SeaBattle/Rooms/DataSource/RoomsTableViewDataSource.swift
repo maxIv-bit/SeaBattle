@@ -17,8 +17,8 @@ final class RoomsTableViewDataSource: TableViewDataSource<Room> {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath, with: RoomsTableViewCell.self)
         cell.selectionStyle = .none
-        let name = data[indexPath.row].name
-        cell.configure(name: name)
+        let room = data[indexPath.row]
+        cell.configure(name: room.name, usersCount: room.players.count)
         return cell
     }
     

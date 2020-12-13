@@ -19,71 +19,71 @@ final class Director<T: Builder> {
         
         builder.setUserId(userId)
         builder.setLength(4)
-        builder.setPositions([BoatPosition(id: UUID().uuidString, boatId: "", x: "A", y: 10, isHurt: false),
-                              BoatPosition(id: UUID().uuidString, boatId: "", x: "A", y: 9, isHurt: false),
-                              BoatPosition(id: UUID().uuidString, boatId: "", x: "A", y: 8, isHurt: false),
-                              BoatPosition(id: UUID().uuidString, boatId: "", x: "A", y: 7, isHurt: false)])
+        builder.setPositions([BoatPosition(id: UUID().uuidString, boatId: "", x: 1, y: 10, isHurt: false),
+                              BoatPosition(id: UUID().uuidString, boatId: "", x: 1, y: 9, isHurt: false),
+                              BoatPosition(id: UUID().uuidString, boatId: "", x: 1, y: 8, isHurt: false),
+                              BoatPosition(id: UUID().uuidString, boatId: "", x: 1, y: 7, isHurt: false)])
         boats.append(builder.getResult())
         
         builder.reset()
         builder.setUserId(userId)
         builder.setLength(3)
-        builder.setPositions([BoatPosition(id: UUID().uuidString, boatId: "", x: "A", y: 6, isHurt: false),
-                              BoatPosition(id: UUID().uuidString, boatId: "", x: "A", y: 5, isHurt: false),
-                              BoatPosition(id: UUID().uuidString, boatId: "", x: "A", y: 4, isHurt: false)])
+        builder.setPositions([BoatPosition(id: UUID().uuidString, boatId: "", x: 1, y: 6, isHurt: false),
+                              BoatPosition(id: UUID().uuidString, boatId: "", x: 1, y: 5, isHurt: false),
+                              BoatPosition(id: UUID().uuidString, boatId: "", x: 1, y: 4, isHurt: false)])
         boats.append(builder.getResult())
         
         builder.reset()
         builder.setUserId(userId)
         builder.setLength(3)
-        builder.setPositions([BoatPosition(id: UUID().uuidString, boatId: "", x: "B", y: 10, isHurt: false),
-                              BoatPosition(id: UUID().uuidString, boatId: "", x: "B", y: 9, isHurt: false),
-                              BoatPosition(id: UUID().uuidString, boatId: "", x: "B", y: 8, isHurt: false)])
+        builder.setPositions([BoatPosition(id: UUID().uuidString, boatId: "", x: 2, y: 10, isHurt: false),
+                              BoatPosition(id: UUID().uuidString, boatId: "", x: 2, y: 9, isHurt: false),
+                              BoatPosition(id: UUID().uuidString, boatId: "", x: 2, y: 8, isHurt: false)])
         boats.append(builder.getResult())
         
         builder.reset()
         builder.setUserId(userId)
         builder.setLength(2)
-        builder.setPositions([BoatPosition(id: UUID().uuidString, boatId: "", x: "B", y: 6, isHurt: false),
-                              BoatPosition(id: UUID().uuidString, boatId: "", x: "B", y: 7, isHurt: false)])
+        builder.setPositions([BoatPosition(id: UUID().uuidString, boatId: "", x: 2, y: 6, isHurt: false),
+                              BoatPosition(id: UUID().uuidString, boatId: "", x: 2, y: 7, isHurt: false)])
         boats.append(builder.getResult())
         
         builder.reset()
         builder.setUserId(userId)
         builder.setLength(2)
-        builder.setPositions([BoatPosition(id: UUID().uuidString, boatId: "", x: "B", y: 5, isHurt: false),
-                              BoatPosition(id: UUID().uuidString, boatId: "", x: "B", y: 4, isHurt: false)])
+        builder.setPositions([BoatPosition(id: UUID().uuidString, boatId: "", x: 2, y: 5, isHurt: false),
+                              BoatPosition(id: UUID().uuidString, boatId: "", x: 2, y: 4, isHurt: false)])
         boats.append(builder.getResult())
         
         builder.reset()
         builder.setUserId(userId)
         builder.setLength(2)
-        builder.setPositions([BoatPosition(id: UUID().uuidString, boatId: "", x: "C", y: 10, isHurt: false),
-                              BoatPosition(id: UUID().uuidString, boatId: "", x: "C", y: 9, isHurt: false)])
+        builder.setPositions([BoatPosition(id: UUID().uuidString, boatId: "", x: 3, y: 10, isHurt: false),
+                              BoatPosition(id: UUID().uuidString, boatId: "", x: 3, y: 9, isHurt: false)])
         boats.append(builder.getResult())
         
         builder.reset()
         builder.setUserId(userId)
         builder.setLength(1)
-        builder.setPositions([BoatPosition(id: UUID().uuidString, boatId: "", x: "C", y: 8, isHurt: false)])
+        builder.setPositions([BoatPosition(id: UUID().uuidString, boatId: "", x: 3, y: 8, isHurt: false)])
         boats.append(builder.getResult())
         
         builder.reset()
         builder.setUserId(userId)
         builder.setLength(1)
-        builder.setPositions([BoatPosition(id: UUID().uuidString, boatId: "", x: "C", y: 7, isHurt: false)])
+        builder.setPositions([BoatPosition(id: UUID().uuidString, boatId: "", x: 3, y: 7, isHurt: false)])
         boats.append(builder.getResult())
         
         builder.reset()
         builder.setUserId(userId)
         builder.setLength(1)
-        builder.setPositions([BoatPosition(id: UUID().uuidString, boatId: "", x: "C", y: 6, isHurt: false)])
+        builder.setPositions([BoatPosition(id: UUID().uuidString, boatId: "", x: 3, y: 6, isHurt: false)])
         boats.append(builder.getResult())
         
         builder.reset()
         builder.setUserId(userId)
         builder.setLength(1)
-        builder.setPositions([BoatPosition(id: UUID().uuidString, boatId: "", x: "C", y: 5, isHurt: false)])
+        builder.setPositions([BoatPosition(id: UUID().uuidString, boatId: "", x: 3, y: 5, isHurt: false)])
         boats.append(builder.getResult())
         return boats
     }

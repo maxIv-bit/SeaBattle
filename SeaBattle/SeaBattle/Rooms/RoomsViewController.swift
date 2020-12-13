@@ -35,8 +35,12 @@ private extension RoomsViewController {
     }
     
     func configureUI() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log out", style: .plain, target: self, action: #selector(rightBarButtonItemAction))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Create room", style: .plain, target: self, action: #selector(leftBarButtonItemAction))
+        navigationController?.navigationBar.tintColor = .white
+        let right = UIBarButtonItem(title: "Log out", style: .plain, target: self, action: #selector(rightBarButtonItemAction))
+        navigationItem.rightBarButtonItem = right
+        let left = UIBarButtonItem(title: "Create room", style: .plain, target: self, action: #selector(leftBarButtonItemAction))
+        navigationItem.leftBarButtonItem = left
+        navigationController?.navigationBar.setBackgroundImage(UIImage(named: "SeaBattle3"), for: .default)
     }
     
     func configureBindings() {

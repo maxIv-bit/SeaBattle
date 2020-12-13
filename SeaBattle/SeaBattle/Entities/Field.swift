@@ -7,15 +7,48 @@
 
 import Foundation
 
-final class FieldCell {
-    var x: String
+final class Position: Hashable, Equatable {
+    var x: Int
     var y: Int
+    
+    init(x: Int, y: Int) {
+        self.x = x
+        self.y = y
+    }
+    
+    static func == (lhs: Position, rhs: Position) -> Bool {
+        lhs.x == rhs.x && lhs.y == rhs.y
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine("\(x)-\(y)")
+    }
+    
+    var description: String {
+        "\(x)-\(y)"
+    }
+}
+
+enum AxisPosition: Int {
+    case vertical,
+    horizontal
+}
+
+final class FieldCell {
+    var positions: [Position]
+    var axisPosition = AxisPosition.horizontal
     var isShot: Bool
     var isBoat: Bool
     
-    init(x: String, y: Int, isShot: Bool, isBoat: Bool) {
-        self.x = x
-        self.y = y
+    init(positions: [Position], isShot: Bool, isBoat: Bool) {
+        self.positions = positions
+        if positions.count > 1 {
+            if Set(positions.map({ $0.x })).count > Set(positions.map({ $0.y })).count {
+                axisPosition = .horizontal
+            } else {
+                axisPosition = .vertical
+            }
+        }
         self.isShot = isShot
         self.isBoat = isBoat
     }

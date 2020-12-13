@@ -38,15 +38,19 @@
 		2D5B2C6725756C6E00F83629 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5B2C6625756C6E00F83629 /* Room.swift */; };
 		2D5B2C6A25756C7900F83629 /* Boat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5B2C6925756C7900F83629 /* Boat.swift */; };
 		2D5B2C6D25756C8400F83629 /* BoatPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5B2C6C25756C8400F83629 /* BoatPosition.swift */; };
+		2D5B4C5A257D5A1C006520B4 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5B4C59257D5A1C006520B4 /* UIViewExtension.swift */; };
 		2D5BD96B257674DA000160CB /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5BD96A257674DA000160CB /* Builder.swift */; };
 		2D5BD96E257675AA000160CB /* BoatBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5BD96D257675AA000160CB /* BoatBuilder.swift */; };
 		2D5BD971257678E5000160CB /* Director.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5BD970257678E5000160CB /* Director.swift */; };
+		2D5D02F525829E4B0033BEED /* BattleFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D02F425829E4B0033BEED /* BattleFieldView.swift */; };
+		2D5D02F82582A75F0033BEED /* BoatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D02F72582A75F0033BEED /* BoatView.swift */; };
 		2D635AF32567036D00AE924B /* CGRectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D635AF22567036D00AE924B /* CGRectExtension.swift */; };
 		2D635AF7256703AA00AE924B /* BackdownTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D635AF6256703AA00AE924B /* BackdownTextFieldView.swift */; };
 		2D64CC532565A4A400AC8FD4 /* ChainHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D64CC522565A4A400AC8FD4 /* ChainHandler.swift */; };
 		2D64CC582565AD2D00AC8FD4 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D64CC572565AD2D00AC8FD4 /* Validator.swift */; };
 		2D64CC5C2565AFE300AC8FD4 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D64CC5B2565AFE300AC8FD4 /* UIViewControllerExtension.swift */; };
 		2D64CC5F2565B00B00AC8FD4 /* UIAlertContollerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D64CC5E2565B00B00AC8FD4 /* UIAlertContollerExtension.swift */; };
+		2D6588AA257AC17B00C1D39A /* UIEdgeInsetsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6588A9257AC17B00C1D39A /* UIEdgeInsetsExtension.swift */; };
 		2D66E5E62576B5EC003E6D97 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D66E5E52576B5EC003E6D97 /* GameViewController.swift */; };
 		2D66E5EA2576B5F3003E6D97 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D66E5E92576B5F3003E6D97 /* GameViewModel.swift */; };
 		2D66E5EE2576B680003E6D97 /* GameCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D66E5ED2576B680003E6D97 /* GameCollectionViewDataSource.swift */; };
@@ -97,15 +101,19 @@
 		2D5B2C6625756C6E00F83629 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		2D5B2C6925756C7900F83629 /* Boat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boat.swift; sourceTree = "<group>"; };
 		2D5B2C6C25756C8400F83629 /* BoatPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoatPosition.swift; sourceTree = "<group>"; };
+		2D5B4C59257D5A1C006520B4 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		2D5BD96A257674DA000160CB /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		2D5BD96D257675AA000160CB /* BoatBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoatBuilder.swift; sourceTree = "<group>"; };
 		2D5BD970257678E5000160CB /* Director.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Director.swift; sourceTree = "<group>"; };
+		2D5D02F425829E4B0033BEED /* BattleFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleFieldView.swift; sourceTree = "<group>"; };
+		2D5D02F72582A75F0033BEED /* BoatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoatView.swift; sourceTree = "<group>"; };
 		2D635AF22567036D00AE924B /* CGRectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRectExtension.swift; sourceTree = "<group>"; };
 		2D635AF6256703AA00AE924B /* BackdownTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackdownTextFieldView.swift; sourceTree = "<group>"; };
 		2D64CC522565A4A400AC8FD4 /* ChainHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainHandler.swift; sourceTree = "<group>"; };
 		2D64CC572565AD2D00AC8FD4 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		2D64CC5B2565AFE300AC8FD4 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		2D64CC5E2565B00B00AC8FD4 /* UIAlertContollerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertContollerExtension.swift; sourceTree = "<group>"; };
+		2D6588A9257AC17B00C1D39A /* UIEdgeInsetsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEdgeInsetsExtension.swift; sourceTree = "<group>"; };
 		2D66E5E52576B5EC003E6D97 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		2D66E5E92576B5F3003E6D97 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		2D66E5ED2576B680003E6D97 /* GameCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionViewDataSource.swift; sourceTree = "<group>"; };
@@ -233,6 +241,8 @@
 				2D5A0B322569846100D725ED /* UITableViewExtension.swift */,
 				2D5AEF452575035D0034F266 /* KeyDecodingContainerExtension.swift */,
 				2D66E5FA2576CB99003E6D97 /* UICollectionViewExtension.swift */,
+				2D6588A9257AC17B00C1D39A /* UIEdgeInsetsExtension.swift */,
+				2D5B4C59257D5A1C006520B4 /* UIViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -276,6 +286,15 @@
 				2D5BD970257678E5000160CB /* Director.swift */,
 			);
 			path = Builder;
+			sourceTree = "<group>";
+		};
+		2D5D02F325829E360033BEED /* BattleField */ = {
+			isa = PBXGroup;
+			children = (
+				2D5D02F425829E4B0033BEED /* BattleFieldView.swift */,
+				2D5D02F72582A75F0033BEED /* BoatView.swift */,
+			);
+			path = BattleField;
 			sourceTree = "<group>";
 		};
 		2D635AF52567039000AE924B /* Custom */ = {
@@ -341,6 +360,7 @@
 				2D5A0B0C25695B7700D725ED /* Auth */,
 				2D5A0B0D25695B8500D725ED /* Rooms */,
 				2D66E5E42576B5D1003E6D97 /* Game */,
+				2D5D02F325829E360033BEED /* BattleField */,
 				2D5A0AFE2569527A00D725ED /* ChainHandlers */,
 				2D5BD96125767387000160CB /* Builder */,
 				2D5A0B4025698D5C00D725ED /* Entities */,
@@ -479,10 +499,12 @@
 				2D5A0B0F25695D5300D725ED /* RoomsViewController.swift in Sources */,
 				2D5A0B2A2569834B00D725ED /* RoomsTableViewDataSource.swift in Sources */,
 				2D64CC5C2565AFE300AC8FD4 /* UIViewControllerExtension.swift in Sources */,
+				2D5D02F82582A75F0033BEED /* BoatView.swift in Sources */,
 				2D5A0B332569846100D725ED /* UITableViewExtension.swift in Sources */,
 				2D5A0B4225698D6700D725ED /* User.swift in Sources */,
 				2D5A0B302569842200D725ED /* Reusable.swift in Sources */,
 				2D64CC5F2565B00B00AC8FD4 /* UIAlertContollerExtension.swift in Sources */,
+				2D6588AA257AC17B00C1D39A /* UIEdgeInsetsExtension.swift in Sources */,
 				2D77EE43256066AD000DA5A2 /* AuthViewController.swift in Sources */,
 				2D5A0B2025696B7C00D725ED /* AuthRepositoryDefault.swift in Sources */,
 				2D5A0B002569528D00D725ED /* EmailChainHandler.swift in Sources */,
@@ -505,9 +527,11 @@
 				2D64CC532565A4A400AC8FD4 /* ChainHandler.swift in Sources */,
 				2D66E5EA2576B5F3003E6D97 /* GameViewModel.swift in Sources */,
 				2D5A0B1325695D6A00D725ED /* RoomsViewModel.swift in Sources */,
+				2D5D02F525829E4B0033BEED /* BattleFieldView.swift in Sources */,
 				2D5A7B75256412ED00A7CC86 /* BaseViewModel.swift in Sources */,
 				2D5A0B2D256983FF00D725ED /* TableViewCell.swift in Sources */,
 				2D5A0B09256952B000D725ED /* SignUpChainHandler.swift in Sources */,
+				2D5B4C5A257D5A1C006520B4 /* UIViewExtension.swift in Sources */,
 				2D5A828C256EBBE600C32F72 /* RoomsRepositoryDefault.swift in Sources */,
 				2D5A0B1C25696B3300D725ED /* AuthRepository.swift in Sources */,
 				2D635AF32567036D00AE924B /* CGRectExtension.swift in Sources */,

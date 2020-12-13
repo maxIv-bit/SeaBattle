@@ -47,7 +47,7 @@ final class RoomsRepositoryDefault: RoomsRepository {
         var boatsDict = [String: Boat]()
         boats.forEach { boatsDict[$0.id] = $0 }
         setRoom(name, user: user, boats: [user.id: boatsDict])
-        roomRef.onDisconnectRemoveValue()
+//        roomRef.onDisconnectRemoveValue()
     }
     
     func setRoom(_ name: String, user: User, boats: [String: [String: Boat]]) {
