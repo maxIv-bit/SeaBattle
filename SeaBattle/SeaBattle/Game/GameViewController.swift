@@ -59,13 +59,13 @@ private extension GameViewController {
     }
     
     func configureBindings() {
-        firstUserGameView.didTapOnPosition = { [weak self] position in
-            self?.viewModel.shoot(x: Int(position.x), y: Int(position.y))
-        }
-        
         viewModel.didReceivePositions = { [weak self] positions in
             guard let self = self else { return }
             self.firstUserGameView.configure(with: self.viewModel.firstUserBoats, positions: positions)
+        }
+        
+        firstUserGameView.didShootPositionAt = { [weak self] indexPath in
+            self?.viewModel.shoot(at: indexPath.item)
         }
     }
 }

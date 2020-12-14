@@ -1,5 +1,5 @@
 //
-//  BattleFieldCellView.swift
+//  BattleFieldCell.swift
 //  SeaBattle
 //
 //  Created by Maks on 10.12.2020.
@@ -7,34 +7,27 @@
 
 import UIKit
 
-final class BattleFieldCellView: View {
+final class BattleFieldCell: CollectionViewCell {
     private lazy var imageView = UIImageView()
-    var x: Int
-    var y: Int
-    var isShot: Bool
-    
-    init(x: Int, y: Int, isShot: Bool, frame: CGRect) {
-        self.x = x
-        self.y = y
-        self.isShot = isShot
-        
-        super.init(frame: frame)
-        
-        self.imageView.isHidden = !isShot
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    private(set) var x = 0
+    private(set) var y = 0
+    private(set) var isShot = false
     
     override func configure() {
         attachViews()
         configureUI()
     }
+    
+    func configure(x: Int, y: Int, isShot: Bool) {
+        self.x = x
+        self.y = y
+        self.isShot = isShot
+        imageView.isHidden = !isShot
+    }
 }
 
 //  MARK: - Private
-private extension BattleFieldCellView {
+private extension BattleFieldCell {
     func attachViews() {
         [imageView].forEach(addSubview)
         

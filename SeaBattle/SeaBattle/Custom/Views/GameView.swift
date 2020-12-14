@@ -14,7 +14,7 @@ final class GameView: View {
     private lazy var battleFieldView = BattleFieldView()
     
     // MARK: - Callbacks
-    var didTapOnPosition: ((CGPoint) -> Void)?
+    var didShootPositionAt: ((IndexPath) -> Void)?
     
     override func configure() {
         configureBindings()
@@ -52,8 +52,8 @@ final class GameView: View {
 //  MARK: - Private
 private extension GameView {
     func configureBindings() {
-        battleFieldView.didTapOnPosition = { [weak self] position in
-            self?.didTapOnPosition?(position)
+        battleFieldView.didShootPositionAt = { [weak self] indexPath in
+            self?.didShootPositionAt?(indexPath)
         }
     }
 }

@@ -43,7 +43,7 @@
 		2D5BD96B257674DA000160CB /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5BD96A257674DA000160CB /* Builder.swift */; };
 		2D5BD96E257675AA000160CB /* BoatBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5BD96D257675AA000160CB /* BoatBuilder.swift */; };
 		2D5BD971257678E5000160CB /* Director.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5BD970257678E5000160CB /* Director.swift */; };
-		2D5D02F525829E4B0033BEED /* BattleFieldCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D02F425829E4B0033BEED /* BattleFieldCellView.swift */; };
+		2D5D02F525829E4B0033BEED /* BattleFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D02F425829E4B0033BEED /* BattleFieldCell.swift */; };
 		2D5D02F82582A75F0033BEED /* BoatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D02F72582A75F0033BEED /* BoatView.swift */; };
 		2D5EBE8B2586472800A8AD05 /* BattleFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5EBE8A2586472800A8AD05 /* BattleFieldView.swift */; };
 		2D5EBE8F258648DB00A8AD05 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5EBE8E258648DB00A8AD05 /* View.swift */; };
@@ -62,7 +62,6 @@
 		2D66E5F52576B6D3003E6D97 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D66E5F42576B6D3003E6D97 /* CollectionViewCell.swift */; };
 		2D66E5F82576B7DF003E6D97 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D66E5F72576B7DF003E6D97 /* Field.swift */; };
 		2D66E5FB2576CB99003E6D97 /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D66E5FA2576CB99003E6D97 /* UICollectionViewExtension.swift */; };
-		2D66E5FF2576CC0E003E6D97 /* FieldCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D66E5FE2576CC0E003E6D97 /* FieldCellCollectionViewCell.swift */; };
 		2D740480256302E500B63D22 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D74047F256302E500B63D22 /* GoogleService-Info.plist */; };
 		2D77EE3F256066AD000DA5A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D77EE3E256066AD000DA5A2 /* AppDelegate.swift */; };
 		2D77EE43256066AD000DA5A2 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D77EE42256066AD000DA5A2 /* AuthViewController.swift */; };
@@ -110,7 +109,7 @@
 		2D5BD96A257674DA000160CB /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		2D5BD96D257675AA000160CB /* BoatBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoatBuilder.swift; sourceTree = "<group>"; };
 		2D5BD970257678E5000160CB /* Director.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Director.swift; sourceTree = "<group>"; };
-		2D5D02F425829E4B0033BEED /* BattleFieldCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleFieldCellView.swift; sourceTree = "<group>"; };
+		2D5D02F425829E4B0033BEED /* BattleFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleFieldCell.swift; sourceTree = "<group>"; };
 		2D5D02F72582A75F0033BEED /* BoatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoatView.swift; sourceTree = "<group>"; };
 		2D5EBE8A2586472800A8AD05 /* BattleFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleFieldView.swift; sourceTree = "<group>"; };
 		2D5EBE8E258648DB00A8AD05 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
@@ -129,7 +128,6 @@
 		2D66E5F42576B6D3003E6D97 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		2D66E5F72576B7DF003E6D97 /* Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
 		2D66E5FA2576CB99003E6D97 /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
-		2D66E5FE2576CC0E003E6D97 /* FieldCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		2D74047F256302E500B63D22 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2D77EE3B256066AD000DA5A2 /* SeaBattle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeaBattle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D77EE3E256066AD000DA5A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -159,7 +157,6 @@
 				2D4D3E0F258663230082C1A4 /* GameView.swift */,
 				2D5EBE92258651D900A8AD05 /* CoordinateView.swift */,
 				2D5EBE8A2586472800A8AD05 /* BattleFieldView.swift */,
-				2D5D02F425829E4B0033BEED /* BattleFieldCellView.swift */,
 				2D5D02F72582A75F0033BEED /* BoatView.swift */,
 			);
 			path = Views;
@@ -328,6 +325,7 @@
 		2D635AF52567039000AE924B /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				2D4D3E13258667450082C1A4 /* Views */,
 				2D5A827D256EB4FB00C32F72 /* TableViewCells */,
 				2D66E5FD2576CBE7003E6D97 /* CollectionViewCells */,
 			);
@@ -337,7 +335,6 @@
 		2D66E5E42576B5D1003E6D97 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				2D4D3E13258667450082C1A4 /* Views */,
 				2D66E5EC2576B65E003E6D97 /* DataSource */,
 				2D66E5E52576B5EC003E6D97 /* GameViewController.swift */,
 				2D66E5E92576B5F3003E6D97 /* GameViewModel.swift */,
@@ -356,7 +353,7 @@
 		2D66E5FD2576CBE7003E6D97 /* CollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				2D66E5FE2576CC0E003E6D97 /* FieldCellCollectionViewCell.swift */,
+				2D5D02F425829E4B0033BEED /* BattleFieldCell.swift */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -384,8 +381,8 @@
 			children = (
 				2D5A0B38256987A900D725ED /* SeaBattle.entitlements */,
 				2D77EE3E256066AD000DA5A2 /* AppDelegate.swift */,
-				2D635AF52567039000AE924B /* Custom */,
 				2D5A7B80256416C000A7CC86 /* Base */,
+				2D635AF52567039000AE924B /* Custom */,
 				2D5A0B0C25695B7700D725ED /* Auth */,
 				2D5A0B0D25695B8500D725ED /* Rooms */,
 				2D66E5E42576B5D1003E6D97 /* Game */,
@@ -518,7 +515,6 @@
 				2D64CC582565AD2D00AC8FD4 /* Validator.swift in Sources */,
 				2D66E5F82576B7DF003E6D97 /* Field.swift in Sources */,
 				2D5BD96E257675AA000160CB /* BoatBuilder.swift in Sources */,
-				2D66E5FF2576CC0E003E6D97 /* FieldCellCollectionViewCell.swift in Sources */,
 				2D5A7B72256412C500A7CC86 /* BaseViewController.swift in Sources */,
 				2D5A0B162569630600D725ED /* LogOutChainHandler.swift in Sources */,
 				2D5BD971257678E5000160CB /* Director.swift in Sources */,
@@ -556,7 +552,7 @@
 				2D64CC532565A4A400AC8FD4 /* ChainHandler.swift in Sources */,
 				2D66E5EA2576B5F3003E6D97 /* GameViewModel.swift in Sources */,
 				2D5A0B1325695D6A00D725ED /* RoomsViewModel.swift in Sources */,
-				2D5D02F525829E4B0033BEED /* BattleFieldCellView.swift in Sources */,
+				2D5D02F525829E4B0033BEED /* BattleFieldCell.swift in Sources */,
 				2D5A7B75256412ED00A7CC86 /* BaseViewModel.swift in Sources */,
 				2D5EBE93258651D900A8AD05 /* CoordinateView.swift in Sources */,
 				2D5EBE8F258648DB00A8AD05 /* View.swift in Sources */,

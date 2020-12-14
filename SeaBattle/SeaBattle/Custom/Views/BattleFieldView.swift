@@ -12,36 +12,26 @@ private struct Constants {
 }
 
 final class BattleFieldView: View {
-    private lazy var battleFieldCellViews = [BattleFieldCellView]()
+    private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    private lazy var dataSource = GameCollectionViewDataSource(collectionView: collectionView)
     private lazy var boatViews = [BoatView]()
-    private lazy var tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureRecognizer))
     
     // MARK: - Callback
-    var didTapOnPosition: ((CGPoint) -> Void)?
+    var didShootPositionAt: ((IndexPath) -> Void)?
     
     override func configure() {
-        addGestureRecognizer(tapGesture)
+        attachViews()
+        configureUI()
+        configureBindings()
     }
     
     func configure(with boats: [Boat], positions: [Position]) {
-        battleFieldCellViews.forEach { $0.removeFromSuperview() }
-        battleFieldCellViews.removeAll()
-        boatViews.forEach { $0.removeFromSuperview() }
-        boatViews.removeAll()
+        dataSource.update(data: positions, shouldReload: true)
         
         let cellWidth: CGFloat = self.bounds.width / 10
         let cellHeight: CGFloat = self.bounds.height / 10
         
         DispatchQueue.global().async {
-            for position in positions {
-                let frame = CGRect(x: CGFloat(position.x - 1) * cellWidth, y: CGFloat(position.y - 1) * cellHeight, width: cellWidth, height: cellHeight)
-                DispatchQueue.main.async {
-                    let newView = BattleFieldCellView(x: position.x, y: position.y, isShot: position.isShot, frame: frame)
-                    self.battleFieldCellViews.append(newView)
-                    self.addSubview(newView)
-                }
-            }
-            
             for boat in boats.sorted(by: { $0.positions.values.first?.x ?? 0 < $1.positions.values.first?.x ?? 0 }) {
                 let boatPositions = boat.positions.values.sorted(by: { $0.x < $1.x || $0.y < $1.y }).map { Position(x: $0.x, y: $0.y, isShot: $0.isHurt) }
                 let first = boatPositions.first!
@@ -64,12 +54,25 @@ final class BattleFieldView: View {
             }
         }
     }
-    
-    @objc func tapGestureRecognizer(_ gesture: UITapGestureRecognizer) {
-        let location = gesture.location(in: self)
-        let cellWidth: CGFloat = self.bounds.width / 10
-        let cellHeight: CGFloat = self.bounds.height / 10
+}
+
+//  MARK: - Private
+private extension BattleFieldView {
+    func attachViews() {
+        [collectionView].forEach(addSubview)
         
-        didTapOnPosition?(CGPoint(x: Int(location.x / cellWidth) + 1, y: Int(location.y / cellHeight) + 1))
+        collectionView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+    }
+    
+    func configureUI() {
+        
+    }
+    
+    func configureBindings() {
+        dataSource.didSelect = { [weak self] _, indexPath in
+            self?.didShootPositionAt?(indexPath)
+        }
     }
 }
