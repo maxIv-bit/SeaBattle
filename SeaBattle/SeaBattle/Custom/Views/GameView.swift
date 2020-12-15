@@ -15,6 +15,8 @@ final class GameView: View {
     
     // MARK: - Callbacks
     var didShootPositionAt: ((IndexPath) -> Void)?
+    var didUpdateBoatPositions: ((String, [Position]) -> Void)?
+    var didShootBoatAtPosition: ((String, Position) -> Void)?
     
     override func configure() {
         configureBindings()
@@ -47,6 +49,14 @@ final class GameView: View {
         addSubview(battleFieldView)
         battleFieldView.configure(with: boats, positions: positions)
     }
+    
+    func update(positions: [Position]) {
+        battleFieldView.update(positions: positions)
+    }
+    
+    func update(boat: Boat, isShot: Bool) {
+        battleFieldView.update(boat: boat, isShot: isShot)
+    }
 }
 
 //  MARK: - Private
@@ -54,6 +64,14 @@ private extension GameView {
     func configureBindings() {
         battleFieldView.didShootPositionAt = { [weak self] indexPath in
             self?.didShootPositionAt?(indexPath)
+        }
+        
+        battleFieldView.didUpdateBoatPositions = { [weak self] boatId, positions in
+            self?.didUpdateBoatPositions?(boatId, positions)
+        }
+        
+        battleFieldView.didShootBoatAtPosition = { [weak self] boatId, position in
+            self?.didShootBoatAtPosition?(boatId, position)
         }
     }
 }

@@ -62,9 +62,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func showGame(room: Room, navigation: UINavigationController?) {
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromRight
+        navigation?.view.layer.add(transition, forKey: nil)
         let gameViewModel = GameViewModel(roomsRepository: roomsRepository, room: room)
         let gameViewController = GameViewController(viewModel: gameViewModel)
-        navigation?.pushViewController(gameViewController, animated: true)
+        navigation?.pushViewController(gameViewController, animated: false)
     }
 }
 

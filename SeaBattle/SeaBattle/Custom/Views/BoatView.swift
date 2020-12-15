@@ -9,16 +9,23 @@ import UIKit
 
 final class BoatView: View {
     private lazy var stackView = UIStackView()
+    private lazy var singleTapGesture = UITapGestureRecognizer(target: self, action: #selector(singleTapGestureRegonizer))
     private lazy var doubleTapGesture = UITapGestureRecognizer(target: self, action: #selector(doubleTapGestureRegonizer))
     private(set) var boat: Boat
     
     // MARK: - Callbacks
-    var didUpdatePositions: ((Boat) -> Void)?
+    var didUpdatePositions: ((String, [Position]) -> Void)?
+    var didShootPosition: ((String, Position) -> Void)?
     
-    init(boat: Boat, frame: CGRect) {
+    init(boat: Boat, frame: CGRect,
+         postionsObserver: ((String, [Position]) -> Void)?,
+         shootObserver: ((String, Position) -> Void)?) {
         self.boat = boat
         
         super.init(frame: frame)
+        
+        didUpdatePositions = postionsObserver
+        didShootPosition = shootObserver
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -75,46 +82,28 @@ final class BoatView: View {
         translateFrameToPositions(sv: sv)
     }
     
-    @objc func doubleTapGestureRegonizer(_ gesture: UITapGestureRecognizer) {
-        print("double tap")
-    }
-    
-    func translateFrameToPositions(sv: UIView) {
-        isUserInteractionEnabled = false
+    @objc func singleTapGestureRegonizer(_ gesture: UITapGestureRecognizer) {
+        guard let sv = superview else { return }
+        let location = gesture.location(in: sv)
         let cellWidth = sv.bounds.width / 10
         let cellHeight = sv.bounds.height / 10
-        if frame.width > frame.height {
-            var x = frame.x
-            var xs = [Int]()
-            while x < frame.x + frame.width {
-                xs.append(Int(x / cellWidth))
-                x += cellWidth
-            }
-            
-            let y = Int(frame.y / cellHeight)
-            
-            for (index, element) in boat.positions.enumerated() {
-                boat.positions[element.key]?.y = y + 1
-                boat.positions[element.key]?.x = xs[index] + 1
-            }
-            didUpdatePositions?(boat)
-        } else {
-            var y = frame.y
-            var ys = [Int]()
-            while y < frame.y + frame.height {
-                ys.append(Int(y / cellHeight))
-                y += cellHeight
-            }
-            
-            let x = Int(frame.x / cellWidth)
-            
-            for (index, element) in boat.positions.enumerated() {
-                boat.positions[element.key]?.x = x + 1
-                boat.positions[element.key]?.y = ys[index] + 1
-            }
-            didUpdatePositions?(boat)
+        let x = Int(location.x / cellWidth) + 1
+        let y = Int(location.y / cellHeight) + 1
+        didShootPosition?(boat.id, Position(x: x, y: y, isShot: true))
+    }
+    
+    @objc func doubleTapGestureRegonizer(_ gesture: UITapGestureRecognizer) {
+        print("double tap")
+        var positions = [Position]()
+        for position in boat.positions.values {
+            positions.append(Position(x: position.y - 1, y: position.x - 1, isShot: position.isHurt))
         }
-        isUserInteractionEnabled = true
+        didUpdatePositions?(boat.id, positions)
+    }
+    
+    func update(boat: Boat) {
+        self.boat = boat
+        configurePositions()
     }
 }
 
@@ -133,8 +122,20 @@ private extension BoatView {
         self.layer.borderWidth = 5.0
         self.layer.cornerRadius = 10.0
         
+        configurePositions()
+        stackView.spacing = 4
+        stackView.distribution = .fillEqually
+        
+        singleTapGesture.numberOfTapsRequired = 1
+        addGestureRecognizer(singleTapGesture)
+        doubleTapGesture.numberOfTapsRequired = 2
+        addGestureRecognizer(doubleTapGesture)
+        singleTapGesture.require(toFail: doubleTapGesture)
+    }
+    
+    func configurePositions() {
         stackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
-        let positions = Array(boat.positions.values).sorted(by: { $0.x < $1.x && $0.y < $1.y })
+        let positions = Array(boat.positions.values).sorted(by: { $0.x < $1.x || $0.y < $1.y })
         if positions.count > 1 {
             if Set(positions.map({ $0.x })).count > Set(positions.map({ $0.y })).count {
                 stackView.axis = .horizontal
@@ -145,10 +146,43 @@ private extension BoatView {
             stackView.axis = .horizontal
         }
         positions.forEach { stackView.addArrangedSubview(UIImageView(image: $0.isHurt ? UIImage(named: "redX") : nil)) }
-        stackView.spacing = 4
-        stackView.distribution = .fillEqually
-        
-        doubleTapGesture.numberOfTapsRequired = 2
-        addGestureRecognizer(doubleTapGesture)
+    }
+    
+    func translateFrameToPositions(sv: UIView) {
+        isUserInteractionEnabled = false
+        let cellWidth = sv.bounds.width / 10
+        let cellHeight = sv.bounds.height / 10
+        if frame.width > frame.height {
+            var x = frame.x
+            var xs = [Int]()
+            while x < frame.x + frame.width {
+                xs.append(Int(x / cellWidth))
+                x += cellWidth
+            }
+            
+            let y = Int(frame.y / cellHeight)
+            
+            var positions = [Position]()
+            for x in xs {
+                positions.append(Position(x: x, y: y, isShot: false))
+            }
+            didUpdatePositions?(boat.id, positions)
+        } else {
+            var y = frame.y
+            var ys = [Int]()
+            while y < frame.y + frame.height {
+                ys.append(Int(y / cellHeight))
+                y += cellHeight
+            }
+            
+            let x = Int(frame.x / cellWidth)
+            
+            var positions = [Position]()
+            for y in ys {
+                positions.append(Position(x: x, y: y, isShot: false))
+            }
+            didUpdatePositions?(boat.id, positions)
+        }
+        isUserInteractionEnabled = true
     }
 }

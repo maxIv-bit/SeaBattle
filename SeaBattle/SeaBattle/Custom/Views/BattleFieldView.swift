@@ -18,6 +18,8 @@ final class BattleFieldView: View {
     
     // MARK: - Callback
     var didShootPositionAt: ((IndexPath) -> Void)?
+    var didUpdateBoatPositions: ((String, [Position]) -> Void)?
+    var didShootBoatAtPosition: ((String, Position) -> Void)?
     
     override func configure() {
         attachViews()
@@ -31,26 +33,34 @@ final class BattleFieldView: View {
         let cellWidth: CGFloat = self.bounds.width / 10
         let cellHeight: CGFloat = self.bounds.height / 10
         
-        DispatchQueue.global().async {
+        DispatchQueue.global(qos: .userInitiated).async {
             for boat in boats.sorted(by: { $0.positions.values.first?.x ?? 0 < $1.positions.values.first?.x ?? 0 }) {
-                let boatPositions = boat.positions.values.sorted(by: { $0.x < $1.x || $0.y < $1.y }).map { Position(x: $0.x, y: $0.y, isShot: $0.isHurt) }
-                let first = boatPositions.first!
-                var width: CGFloat = cellWidth
-                var height: CGFloat = cellHeight
-                if boatPositions.count > 1 {
-                    if Set(boatPositions.map({ $0.x })).count > Set(boatPositions.map({ $0.y })).count {
-                        width = CGFloat(boatPositions.count) * width
-                    } else {
-                        height = CGFloat(boatPositions.count) * height
+                self.getBoatFrame(boat: boat, cellWidth: cellWidth, cellHeight: cellHeight) { frame in
+                    DispatchQueue.main.async {
+                        let newView = BoatView(boat: boat, frame: frame, postionsObserver: self.didUpdateBoatPositions, shootObserver: self.didShootBoatAtPosition)
+                        self.boatViews.append(newView)
+                        self.addSubview(newView)
                     }
                 }
-                let frame = CGRect(x: CGFloat(first.x - 1) * cellWidth, y: CGFloat(first.y - 1) * cellHeight, width: Constants.cellPadding + width, height: Constants.cellPadding + height)
-                let insetFrame = frame.insetBy(dx: Constants.cellPadding, dy: Constants.cellPadding)
-                DispatchQueue.main.async {
-                    let newView = BoatView(boat: boat, frame: insetFrame)
-                    self.boatViews.append(newView)
-                    self.addSubview(newView)
-                }
+            }
+        }
+    }
+    
+    func update(positions: [Position]) {
+        dataSource.update(data: positions, shouldReload: true)
+    }
+    
+    func update(boat: Boat, isShot: Bool) {
+        guard let boatView = boatViews.first(where: { $0.boat == boat }) else { return }
+        
+        boatView.update(boat: boat)
+        
+        let cellWidth: CGFloat = self.bounds.width / 10
+        let cellHeight: CGFloat = self.bounds.height / 10
+        
+        if !isShot {
+            getBoatFrame(boat: boat, cellWidth: cellWidth, cellHeight: cellHeight) { frame in
+                boatView.frame = frame
             }
         }
     }
@@ -73,6 +83,27 @@ private extension BattleFieldView {
     func configureBindings() {
         dataSource.didSelect = { [weak self] _, indexPath in
             self?.didShootPositionAt?(indexPath)
+        }
+    }
+    
+    func getBoatFrame(boat: Boat, cellWidth: CGFloat, cellHeight: CGFloat, completion: ((CGRect) -> Void)?) {
+        DispatchQueue.global(qos: .userInitiated).async {
+            let boatPositions = boat.positions.values.sorted(by: { $0.x < $1.x || $0.y < $1.y }).map { Position(x: $0.x, y: $0.y, isShot: $0.isHurt) }
+            let first = boatPositions.first!
+            var width: CGFloat = cellWidth
+            var height: CGFloat = cellHeight
+            if boatPositions.count > 1 {
+                if Set(boatPositions.map({ $0.x })).count > Set(boatPositions.map({ $0.y })).count {
+                    width = CGFloat(boatPositions.count) * width
+                } else {
+                    height = CGFloat(boatPositions.count) * height
+                }
+            }
+            DispatchQueue.main.async {
+                let frame = CGRect(x: CGFloat(first.x - 1) * cellWidth, y: CGFloat(first.y - 1) * cellHeight, width: Constants.cellPadding + width, height: Constants.cellPadding + height)
+                let insetFrame = frame.insetBy(dx: Constants.cellPadding, dy: Constants.cellPadding)
+                completion?(insetFrame)
+            }
         }
     }
 }

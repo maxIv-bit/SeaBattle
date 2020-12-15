@@ -60,12 +60,27 @@ private extension GameViewController {
     
     func configureBindings() {
         viewModel.didReceivePositions = { [weak self] positions in
-            guard let self = self else { return }
-            self.firstUserGameView.configure(with: self.viewModel.firstUserBoats, positions: positions)
+            self?.firstUserGameView.update(positions: positions)
+        }
+        
+        viewModel.didUpdateBoatPositions = { [weak self] boat in
+            self?.firstUserGameView.update(boat: boat, isShot: false)
+        }
+        
+        viewModel.didShootBoat = { [weak self] boat in
+            self?.firstUserGameView.update(boat: boat, isShot: true)
         }
         
         firstUserGameView.didShootPositionAt = { [weak self] indexPath in
             self?.viewModel.shoot(at: indexPath.item)
+        }
+        
+        firstUserGameView.didUpdateBoatPositions = { [weak self] boatId, positions in
+            self?.viewModel.updateBoatPosition(boatId: boatId, positions: positions)
+        }
+        
+        firstUserGameView.didShootBoatAtPosition = { [weak self] boatId, position in
+            self?.viewModel.shootBoat(boatId: boatId, position: position)
         }
     }
 }

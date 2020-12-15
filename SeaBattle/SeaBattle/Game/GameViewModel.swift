@@ -22,6 +22,8 @@ final class GameViewModel: BaseViewModel {
     
     // MARK: - Bindings
     var didReceivePositions: (([Position]) -> Void)?
+    var didUpdateBoatPositions: ((Boat) -> Void)?
+    var didShootBoat: ((Boat) -> Void)?
     
     override func launch() {
         if let userId = room.players["user1"]?.id,
@@ -52,5 +54,23 @@ final class GameViewModel: BaseViewModel {
         position.isShot = true
         
         didReceivePositions?(firstUserPositions)
+    }
+    
+    func updateBoatPosition(boatId: String, positions: [Position]) {
+        guard let boat = firstUserBoats.first(where: { $0.id == boatId }) else { return }
+        
+        for (index, element) in boat.positions.enumerated() {
+            boat.positions[element.key]?.y = positions[index].y + 1
+            boat.positions[element.key]?.x = positions[index].x + 1
+        }
+        didUpdateBoatPositions?(boat)
+    }
+    
+    func shootBoat(boatId: String, position: Position) {
+        guard let boat = firstUserBoats.first(where: { $0.id == boatId }) else { return }
+        
+        guard let boatPosition = boat.positions.values.first(where: { $0.x == position.x && $0.y == position.y }) else { return }
+        boatPosition.isHurt = true
+        didShootBoat?(boat)
     }
 }
