@@ -9,6 +9,7 @@ import Foundation
 
 protocol RoomsRepository {
     func roomAddedObserver(completion: ((Room) -> Void)?)
+    func roomUpdatedObserver(completion: ((Room) -> Void)?)
     func roomRemovedObserver(completion: ((Room) -> Void)?)
     func configureRoom(with name: String, user: User, boats: [Boat])
     func connectToRoom(_ room: Room, user: User, boats: [Boat])

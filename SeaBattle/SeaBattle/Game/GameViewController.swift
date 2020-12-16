@@ -59,16 +59,28 @@ private extension GameViewController {
     }
     
     func configureBindings() {
-        viewModel.didReceivePositions = { [weak self] positions in
+        viewModel.didReceiveFirstUserPositions = { [weak self] positions in
             self?.firstUserGameView.update(positions: positions)
         }
         
-        viewModel.didUpdateBoatPositions = { [weak self] boat in
+        viewModel.didUpdateFirstUserBoatPositions = { [weak self] boat in
             self?.firstUserGameView.update(boat: boat, isShot: false)
         }
         
-        viewModel.didShootBoat = { [weak self] boat in
+        viewModel.didShootFirstUserBoat = { [weak self] boat in
             self?.firstUserGameView.update(boat: boat, isShot: true)
+        }
+        
+        viewModel.didReceiveSecondUserPositions = { [weak self] positions in
+            self?.secondUserGameView.update(positions: positions)
+        }
+        
+        viewModel.didUpdateSecondUserBoatPositions = { [weak self] boat in
+            self?.secondUserGameView.update(boat: boat, isShot: false)
+        }
+        
+        viewModel.didShootSecondUserBoat = { [weak self] boat in
+            self?.secondUserGameView.update(boat: boat, isShot: true)
         }
         
         firstUserGameView.didShootPositionAt = { [weak self] indexPath in
@@ -81,6 +93,34 @@ private extension GameViewController {
         
         firstUserGameView.didShootBoatAtPosition = { [weak self] boatId, position in
             self?.viewModel.shootBoat(boatId: boatId, position: position)
+        }
+        
+        firstUserGameView.isAbleToShoot = { [weak self] in
+            self?.viewModel.isAbleToShoot(true) ?? false
+        }
+        
+        firstUserGameView.isAbleToChangePositions = { [weak self] in
+            self?.viewModel.isAbleToChangePositions(true) ?? false
+        }
+        
+        secondUserGameView.didShootPositionAt = { [weak self] indexPath in
+            self?.viewModel.shoot(at: indexPath.item)
+        }
+        
+        secondUserGameView.didUpdateBoatPositions = { [weak self] boatId, positions in
+            self?.viewModel.updateBoatPosition(boatId: boatId, positions: positions)
+        }
+        
+        secondUserGameView.didShootBoatAtPosition = { [weak self] boatId, position in
+            self?.viewModel.shootBoat(boatId: boatId, position: position)
+        }
+        
+        secondUserGameView.isAbleToShoot = { [weak self] in
+            self?.viewModel.isAbleToShoot(false) ?? false
+        }
+        
+        secondUserGameView.isAbleToChangePositions = { [weak self] in
+            self?.viewModel.isAbleToChangePositions(false) ?? false
         }
     }
 }

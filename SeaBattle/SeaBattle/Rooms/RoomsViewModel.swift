@@ -50,8 +50,15 @@ final class RoomsViewModel: BaseViewModel {
     }
     
     func connectToRoom(at indexPath: IndexPath) {
-        shouldShowGame?(self.rooms[indexPath.row])
-//        roomsRepository.connectToRoom(self.rooms[indexPath.row], user: currentUser, boats: boatDirector.constructBoatsOnStart(userId: currentUser.id))
+        if self.rooms[indexPath.row].players.values.contains(currentUser) {
+            shouldShowGame?(self.rooms[indexPath.row])
+        } else {
+            if self.rooms[indexPath.row].players.count < 2 {
+                roomsRepository.connectToRoom(self.rooms[indexPath.row], user: currentUser, boats: boatDirector.constructBoatsOnStart(userId: currentUser.id))
+            } else {
+                onError?("Sorry this room is already full")
+            }
+        }
     }
 }
 
@@ -76,6 +83,15 @@ private extension RoomsViewModel {
             guard let self = self else { return }
             if let index = self.rooms.firstIndex(where: { $0 == room }) {
                 self.rooms.remove(at: index)
+                self.didReceiveRooms?(self.rooms)
+            }
+        }
+        
+        roomsRepository.roomUpdatedObserver { [weak self] room in
+            guard let self = self else { return }
+            if let index = self.rooms.firstIndex(where: { $0 == room }) {
+                self.rooms.remove(at: index)
+                self.rooms.insert(room, at: index)
                 self.didReceiveRooms?(self.rooms)
             }
         }

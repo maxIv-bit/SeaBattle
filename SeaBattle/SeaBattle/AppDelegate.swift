@@ -56,19 +56,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self?.showAuth()
         }
         roomsViewModel.shouldShowGame = { [weak self, weak navigation] room in
-            self?.showGame(room: room, navigation: navigation)
+            self?.showGame(room: room, user: user, navigation: navigation)
         }
         window?.rootViewController = navigation
     }
     
-    func showGame(room: Room, navigation: UINavigationController?) {
+    func showGame(room: Room, user: User, navigation: UINavigationController?) {
         let transition = CATransition()
         transition.duration = 0.5
         transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         transition.type = CATransitionType.push
         transition.subtype = CATransitionSubtype.fromRight
         navigation?.view.layer.add(transition, forKey: nil)
-        let gameViewModel = GameViewModel(roomsRepository: roomsRepository, room: room)
+        let gameViewModel = GameViewModel(roomsRepository: roomsRepository, room: room, currentUser: user)
         let gameViewController = GameViewController(viewModel: gameViewModel)
         navigation?.pushViewController(gameViewController, animated: false)
     }

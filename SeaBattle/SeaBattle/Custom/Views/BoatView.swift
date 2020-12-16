@@ -16,16 +16,22 @@ final class BoatView: View {
     // MARK: - Callbacks
     var didUpdatePositions: ((String, [Position]) -> Void)?
     var didShootPosition: ((String, Position) -> Void)?
+    var isAbleToShoot: (() -> Bool)?
+    var isAbleToChangePositions: (() -> Bool)?
     
     init(boat: Boat, frame: CGRect,
-         postionsObserver: ((String, [Position]) -> Void)?,
-         shootObserver: ((String, Position) -> Void)?) {
+         didUpdatePositions: ((String, [Position]) -> Void)?,
+         didShootPosition: ((String, Position) -> Void)?,
+         isAbleToShoot: (() -> Bool)?,
+         isAbleToChangePositions: (() -> Bool)?) {
         self.boat = boat
         
         super.init(frame: frame)
         
-        didUpdatePositions = postionsObserver
-        didShootPosition = shootObserver
+        self.didUpdatePositions = didUpdatePositions
+        self.didShootPosition = didShootPosition
+        self.isAbleToShoot = isAbleToShoot
+        self.isAbleToChangePositions = isAbleToChangePositions
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -42,8 +48,9 @@ final class BoatView: View {
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let sv = superview,
-            let touch = touches.first else { return }
+        guard isAbleToChangePositions?() ?? false,
+              let sv = superview,
+              let touch = touches.first else { return }
         
         let parentFrame = sv.bounds
         
@@ -62,12 +69,14 @@ final class BoatView: View {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let sv = superview else { return }
+        guard isAbleToChangePositions?() ?? false,
+              let sv = superview else { return }
         translateFrameToPositions(sv: sv)
     }
     
     @objc func singleTapGestureRegonizer(_ gesture: UITapGestureRecognizer) {
-        guard let sv = superview else { return }
+        guard isAbleToShoot?() ?? false,
+            let sv = superview else { return }
         let location = gesture.location(in: sv)
         let cellWidth = sv.bounds.width / 10
         let cellHeight = sv.bounds.height / 10
@@ -77,6 +86,8 @@ final class BoatView: View {
     }
     
     @objc func doubleTapGestureRegonizer(_ gesture: UITapGestureRecognizer) {
+        guard isAbleToChangePositions?() ?? false else { return }
+        
         let boatPositions = boat.positions.values
         guard boatPositions.count > 1 else { return }
         

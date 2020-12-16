@@ -20,6 +20,8 @@ final class BattleFieldView: View {
     var didShootPositionAt: ((IndexPath) -> Void)?
     var didUpdateBoatPositions: ((String, [Position]) -> Void)?
     var didShootBoatAtPosition: ((String, Position) -> Void)?
+    var isAbleToShoot: (() -> Bool)?
+    var isAbleToChangePositions: (() -> Bool)?
     
     override func configure() {
         attachViews()
@@ -37,7 +39,7 @@ final class BattleFieldView: View {
             for boat in boats.sorted(by: { $0.positions.values.first?.x ?? 0 < $1.positions.values.first?.x ?? 0 }) {
                 self.getBoatFrame(boat: boat, cellWidth: cellWidth, cellHeight: cellHeight) { frame in
                     DispatchQueue.main.async {
-                        let newView = BoatView(boat: boat, frame: frame, postionsObserver: self.didUpdateBoatPositions, shootObserver: self.didShootBoatAtPosition)
+                        let newView = BoatView(boat: boat, frame: frame, didUpdatePositions: self.didUpdateBoatPositions, didShootPosition: self.didShootBoatAtPosition, isAbleToShoot: self.isAbleToShoot, isAbleToChangePositions: self.isAbleToChangePositions)
                         self.boatViews.append(newView)
                         self.addSubview(newView)
                     }
@@ -97,6 +99,7 @@ private extension BattleFieldView {
     
     func configureBindings() {
         dataSource.didSelect = { [weak self] _, indexPath in
+            guard self?.isAbleToShoot?() ?? false else { return }
             self?.didShootPositionAt?(indexPath)
         }
     }

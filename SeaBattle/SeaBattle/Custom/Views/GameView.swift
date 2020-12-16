@@ -17,6 +17,8 @@ final class GameView: View {
     var didShootPositionAt: ((IndexPath) -> Void)?
     var didUpdateBoatPositions: ((String, [Position]) -> Void)?
     var didShootBoatAtPosition: ((String, Position) -> Void)?
+    var isAbleToShoot: (() -> Bool)?
+    var isAbleToChangePositions: (() -> Bool)?
     
     override func configure() {
         configureBindings()
@@ -72,6 +74,14 @@ private extension GameView {
         
         battleFieldView.didShootBoatAtPosition = { [weak self] boatId, position in
             self?.didShootBoatAtPosition?(boatId, position)
+        }
+        
+        battleFieldView.isAbleToShoot = { [weak self] in
+            self?.isAbleToShoot?() ?? false
+        }
+        
+        battleFieldView.isAbleToChangePositions = { [weak self] in
+            self?.isAbleToChangePositions?() ?? false
         }
     }
 }

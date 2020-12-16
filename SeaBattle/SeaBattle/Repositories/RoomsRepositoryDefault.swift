@@ -25,6 +25,20 @@ final class RoomsRepositoryDefault: RoomsRepository {
         }
     }
     
+    func roomUpdatedObserver(completion: ((Room) -> Void)?) {
+        roomsRef.observe(.childChanged) { snap in
+            guard let dict = snap.value as? [String: Any] else { return }
+            
+            do {
+                let jsonData = try JSONSerialization.data(withJSONObject: dict, options: .prettyPrinted)
+                let room = try JSONDecoder().decode(Room.self, from: jsonData)
+                completion?(room)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
     func roomRemovedObserver(completion: ((Room) -> Void)?) {
         roomsRef.observe(.childRemoved) { snap in
             guard let dict = snap.value as? [String: Any] else { return }
