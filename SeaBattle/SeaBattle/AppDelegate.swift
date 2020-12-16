@@ -71,6 +71,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let gameViewModel = GameViewModel(roomsRepository: roomsRepository, gameRepository: gameRepository, room: room, currentUser: user)
         let gameViewController = GameViewController(viewModel: gameViewModel)
         navigation?.pushViewController(gameViewController, animated: false)
+        
+//        let rotateHintViewController = RotateHintViewController(viewModel: RotateHintViewModel(boatFrame: CGRect(origin: .zero, size: CGSize(width: 35, height: 100))))
+//        rotateHintViewController.modalPresentationStyle = .fullScreen
+//        gameViewController.present(rotateHintViewController, animated: false, completion: nil)
     }
 }
 

@@ -36,6 +36,8 @@
 		2D5A828C256EBBE600C32F72 /* RoomsRepositoryDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A828B256EBBE600C32F72 /* RoomsRepositoryDefault.swift */; };
 		2D5AEF462575035D0034F266 /* KeyDecodingContainerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5AEF452575035D0034F266 /* KeyDecodingContainerExtension.swift */; };
 		2D5AEF49257504930034F266 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5AEF48257504930034F266 /* Entity.swift */; };
+		2D5B2555258AC0280023C506 /* RotateHintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5B2554258AC0280023C506 /* RotateHintViewController.swift */; };
+		2D5B255A258AC0370023C506 /* RotateHintViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5B2559258AC0370023C506 /* RotateHintViewModel.swift */; };
 		2D5B2C6725756C6E00F83629 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5B2C6625756C6E00F83629 /* Room.swift */; };
 		2D5B2C6A25756C7900F83629 /* Boat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5B2C6925756C7900F83629 /* Boat.swift */; };
 		2D5B2C6D25756C8400F83629 /* BoatPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5B2C6C25756C8400F83629 /* BoatPosition.swift */; };
@@ -104,6 +106,8 @@
 		2D5A828B256EBBE600C32F72 /* RoomsRepositoryDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsRepositoryDefault.swift; sourceTree = "<group>"; };
 		2D5AEF452575035D0034F266 /* KeyDecodingContainerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyDecodingContainerExtension.swift; sourceTree = "<group>"; };
 		2D5AEF48257504930034F266 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		2D5B2554258AC0280023C506 /* RotateHintViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateHintViewController.swift; sourceTree = "<group>"; };
+		2D5B2559258AC0370023C506 /* RotateHintViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateHintViewModel.swift; sourceTree = "<group>"; };
 		2D5B2C6625756C6E00F83629 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		2D5B2C6925756C7900F83629 /* Boat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boat.swift; sourceTree = "<group>"; };
 		2D5B2C6C25756C8400F83629 /* BoatPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoatPosition.swift; sourceTree = "<group>"; };
@@ -300,6 +304,15 @@
 			path = TableViewCells;
 			sourceTree = "<group>";
 		};
+		2D5B2553258AC00D0023C506 /* RotateHint */ = {
+			isa = PBXGroup;
+			children = (
+				2D5B2554258AC0280023C506 /* RotateHintViewController.swift */,
+				2D5B2559258AC0370023C506 /* RotateHintViewModel.swift */,
+			);
+			path = RotateHint;
+			sourceTree = "<group>";
+		};
 		2D5BD96125767387000160CB /* Builder */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,6 +405,7 @@
 				2D5A0B0C25695B7700D725ED /* Auth */,
 				2D5A0B0D25695B8500D725ED /* Rooms */,
 				2D66E5E42576B5D1003E6D97 /* Game */,
+				2D5B2553258AC00D0023C506 /* RotateHint */,
 				2D5A0AFE2569527A00D725ED /* ChainHandlers */,
 				2D5BD96125767387000160CB /* Builder */,
 				2D5A0B4025698D5C00D725ED /* Entities */,
@@ -557,6 +571,7 @@
 				2D66E5E62576B5EC003E6D97 /* GameViewController.swift in Sources */,
 				2D5A0B06256952A600D725ED /* SignInChainHandler.swift in Sources */,
 				2D5A0B272569831800D725ED /* TableViewDataSource.swift in Sources */,
+				2D5B255A258AC0370023C506 /* RotateHintViewModel.swift in Sources */,
 				2D64CC532565A4A400AC8FD4 /* ChainHandler.swift in Sources */,
 				2D66E5EA2576B5F3003E6D97 /* GameViewModel.swift in Sources */,
 				2D5A0B1325695D6A00D725ED /* RoomsViewModel.swift in Sources */,
@@ -572,6 +587,7 @@
 				2D635AF32567036D00AE924B /* CGRectExtension.swift in Sources */,
 				2D66E5F22576B6C9003E6D97 /* CollectionViewDataSource.swift in Sources */,
 				2D5AEF462575035D0034F266 /* KeyDecodingContainerExtension.swift in Sources */,
+				2D5B2555258AC0280023C506 /* RotateHintViewController.swift in Sources */,
 				2D66E5EE2576B680003E6D97 /* GameCollectionViewDataSource.swift in Sources */,
 				2D5B2C6A25756C7900F83629 /* Boat.swift in Sources */,
 				2D635AF7256703AA00AE924B /* BackdownTextFieldView.swift in Sources */,
