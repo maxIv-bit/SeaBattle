@@ -60,8 +60,8 @@ final class GameViewModel: BaseViewModel {
         guard let boat = firstUserBoats.first(where: { $0.id == boatId }) else { return }
         
         for (index, element) in boat.positions.enumerated() {
-            boat.positions[element.key]?.y = positions[index].y + 1
-            boat.positions[element.key]?.x = positions[index].x + 1
+            boat.positions[element.key]?.y = positions[index].y
+            boat.positions[element.key]?.x = positions[index].x
         }
         didUpdateBoatPositions?(boat)
     }

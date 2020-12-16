@@ -60,6 +60,21 @@ final class BattleFieldView: View {
         
         if !isShot {
             getBoatFrame(boat: boat, cellWidth: cellWidth, cellHeight: cellHeight) { frame in
+                let x = Int((frame.x / self.bounds.width) * 10)
+                let y = Int((frame.y / self.bounds.height) * 10)
+                
+                let cellWidth = self.bounds.width / 10
+                let cellHeight = self.bounds.height / 10
+                let newCenter = CGPoint(x: cellWidth * CGFloat(x) + frame.width / 2,
+                                        y: cellHeight * CGFloat(y) + frame.height / 2)
+                let animation = CABasicAnimation(keyPath: "position")
+                animation.fromValue = frame.center
+                animation.toValue = newCenter
+                animation.duration = 0.2
+                animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
+        //        animation.fillMode = .forwards
+        //        animation.isRemovedOnCompletion = false
+                boatView.layer.add(animation, forKey: "position")
                 boatView.frame = frame
             }
         }

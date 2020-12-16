@@ -63,22 +63,6 @@ final class BoatView: View {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let sv = superview else { return }
-        let x = Int((frame.x / sv.bounds.width) * 10)
-        let y = Int((frame.y / sv.bounds.height) * 10)
-        
-        let cellWidth = sv.bounds.width / 10
-        let cellHeight = sv.bounds.height / 10
-        let newCenter = CGPoint(x: cellWidth * CGFloat(x) + bounds.width / 2,
-                                y: cellHeight * CGFloat(y) + bounds.height / 2)
-        let animation = CABasicAnimation(keyPath: "position")
-        animation.fromValue = frame.center
-        animation.toValue = newCenter
-        animation.duration = 0.2
-        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
-//        animation.fillMode = .forwards
-//        animation.isRemovedOnCompletion = false
-        self.layer.add(animation, forKey: "position")
-        frame.center = newCenter
         translateFrameToPositions(sv: sv)
     }
     
@@ -93,12 +77,42 @@ final class BoatView: View {
     }
     
     @objc func doubleTapGestureRegonizer(_ gesture: UITapGestureRecognizer) {
-        print("double tap")
-        var positions = [Position]()
-        for position in boat.positions.values {
-            positions.append(Position(x: position.y - 1, y: position.x - 1, isShot: position.isHurt))
+        let boatPositions = boat.positions.values
+        guard boatPositions.count > 1 else { return }
+        
+        let xPositions = Set(boat.positions.values.map { $0.x }).sorted(by: { $0 < $1 })
+        let yPositions = Set(boat.positions.values.map { $0.y }).sorted(by: { $0 < $1 })
+        if xPositions.count > yPositions.count {
+            let x = xPositions.first!
+            var y = yPositions.first!
+            if y + xPositions.count > 10 {
+                y = (10 - xPositions.count) + 1
+            }
+            var ys = [Int]()
+            for i in 0..<xPositions.count {
+                ys.append(y + i)
+            }
+            var positions = [Position]()
+            for y in ys {
+                positions.append(Position(x: x, y: y, isShot: false))
+            }
+            didUpdatePositions?(boat.id, positions)
+        } else {
+            let y = yPositions.first!
+            var x = xPositions.first!
+            if x + yPositions.count > 10 {
+                x = (10 - yPositions.count) + 1
+            }
+            var xs = [Int]()
+            for i in 0..<yPositions.count {
+                xs.append(x + i)
+            }
+            var positions = [Position]()
+            for x in xs {
+                positions.append(Position(x: x, y: y, isShot: false))
+            }
+            didUpdatePositions?(boat.id, positions)
         }
-        didUpdatePositions?(boat.id, positions)
     }
     
     func update(boat: Boat) {
@@ -156,11 +170,11 @@ private extension BoatView {
             var x = frame.x
             var xs = [Int]()
             while x < frame.x + frame.width {
-                xs.append(Int(x / cellWidth))
+                xs.append(Int(x / cellWidth) + 1)
                 x += cellWidth
             }
             
-            let y = Int(frame.y / cellHeight)
+            let y = Int(frame.y / cellHeight) + 1
             
             var positions = [Position]()
             for x in xs {
@@ -171,11 +185,11 @@ private extension BoatView {
             var y = frame.y
             var ys = [Int]()
             while y < frame.y + frame.height {
-                ys.append(Int(y / cellHeight))
+                ys.append(Int(y / cellHeight) + 1)
                 y += cellHeight
             }
             
-            let x = Int(frame.x / cellWidth)
+            let x = Int(frame.x / cellWidth) + 1
             
             var positions = [Position]()
             for y in ys {
