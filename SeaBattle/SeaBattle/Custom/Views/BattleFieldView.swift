@@ -22,6 +22,7 @@ final class BattleFieldView: View {
     var didShootBoatAtPosition: ((String, Position) -> Void)?
     var isAbleToShoot: (() -> Bool)?
     var isAbleToChangePositions: (() -> Bool)?
+    var shouldShowBoats: (() -> Bool)?
     
     override func configure() {
         attachViews()
@@ -39,7 +40,7 @@ final class BattleFieldView: View {
             for boat in boats.sorted(by: { $0.positions.values.first?.x ?? 0 < $1.positions.values.first?.x ?? 0 }) {
                 self.getBoatFrame(boat: boat, cellWidth: cellWidth, cellHeight: cellHeight) { frame in
                     DispatchQueue.main.async {
-                        let newView = BoatView(boat: boat, frame: frame, didUpdatePositions: self.didUpdateBoatPositions, didShootPosition: self.didShootBoatAtPosition, isAbleToShoot: self.isAbleToShoot, isAbleToChangePositions: self.isAbleToChangePositions)
+                        let newView = BoatView(boat: boat, frame: frame, didUpdatePositions: self.didUpdateBoatPositions, didShootPosition: self.didShootBoatAtPosition, isAbleToShoot: self.isAbleToShoot, isAbleToChangePositions: self.isAbleToChangePositions, shouldShowBoat: self.shouldShowBoats?() ?? false)
                         self.boatViews.append(newView)
                         self.addSubview(newView)
                     }
@@ -52,7 +53,7 @@ final class BattleFieldView: View {
         dataSource.update(data: positions, shouldReload: true)
     }
     
-    func update(boat: Boat, isShot: Bool) {
+    func update(boat: Boat, isShot: Bool, animate: Bool) {
         guard let boatView = boatViews.first(where: { $0.boat == boat }) else { return }
         
         boatView.update(boat: boat)
@@ -62,21 +63,23 @@ final class BattleFieldView: View {
         
         if !isShot {
             getBoatFrame(boat: boat, cellWidth: cellWidth, cellHeight: cellHeight) { frame in
-                let x = Int((frame.x / self.bounds.width) * 10)
-                let y = Int((frame.y / self.bounds.height) * 10)
-                
-                let cellWidth = self.bounds.width / 10
-                let cellHeight = self.bounds.height / 10
-                let newCenter = CGPoint(x: cellWidth * CGFloat(x) + frame.width / 2,
-                                        y: cellHeight * CGFloat(y) + frame.height / 2)
-                let animation = CABasicAnimation(keyPath: "position")
-                animation.fromValue = frame.center
-                animation.toValue = newCenter
-                animation.duration = 0.2
-                animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
-        //        animation.fillMode = .forwards
-        //        animation.isRemovedOnCompletion = false
-                boatView.layer.add(animation, forKey: "position")
+                if animate {
+                    let x = Int((frame.x / self.bounds.width) * 10)
+                    let y = Int((frame.y / self.bounds.height) * 10)
+                    
+                    let cellWidth = self.bounds.width / 10
+                    let cellHeight = self.bounds.height / 10
+                    let newCenter = CGPoint(x: cellWidth * CGFloat(x) + frame.width / 2,
+                                            y: cellHeight * CGFloat(y) + frame.height / 2)
+                    let animation = CABasicAnimation(keyPath: "position")
+                    animation.fromValue = frame.center
+                    animation.toValue = newCenter
+                    animation.duration = 0.2
+                    animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
+            //        animation.fillMode = .forwards
+            //        animation.isRemovedOnCompletion = false
+                    boatView.layer.add(animation, forKey: "position")
+                }
                 boatView.frame = frame
             }
         }

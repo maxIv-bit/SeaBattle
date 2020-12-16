@@ -34,11 +34,6 @@ final class RoomsViewModel: BaseViewModel {
     
     override func launch() {
         configureBindings()
-        
-        //        if let room = self.rooms.first,
-        //           let position = room.boats[self.currentUser.id]?.values.first?.positions.first?.value {
-        //            self.roomsRepository.updateBoatPosition(roomId: room.id, userId: self.currentUser.id, boatId: position.boatId, positionId: position.id)
-        //        }
     }
     
     func logOut() {

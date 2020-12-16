@@ -14,9 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     private var authRepository = AuthRepositoryDefault()
     private var roomsRepository = RoomsRepositoryDefault()
+    private var gameRepository = GameRepositoryDefault()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         FirebaseApp.configure()
         
         IQKeyboardManager.shared.enable = true
@@ -68,7 +68,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         transition.type = CATransitionType.push
         transition.subtype = CATransitionSubtype.fromRight
         navigation?.view.layer.add(transition, forKey: nil)
-        let gameViewModel = GameViewModel(roomsRepository: roomsRepository, room: room, currentUser: user)
+        let gameViewModel = GameViewModel(roomsRepository: roomsRepository, gameRepository: gameRepository, room: room, currentUser: user)
         let gameViewController = GameViewController(viewModel: gameViewModel)
         navigation?.pushViewController(gameViewController, animated: false)
     }

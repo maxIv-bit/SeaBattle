@@ -70,7 +70,9 @@ final class RoomsRepositoryDefault: RoomsRepository {
             let room: [String: Any] = try Room(id: roomId,
                                                players: ["user1": user],
                                                name: name,
-                                               boats: boats).asDictionary()
+                                               boats: boats,
+                                               events: [:],
+                                               shotPositions: [:]).asDictionary()
             
             roomsRef.child(roomId).setValue(room)
         } catch {
@@ -83,13 +85,5 @@ final class RoomsRepositoryDefault: RoomsRepository {
         var boatsDict = [String: Any]()
         boats.forEach { boatsDict[$0.id] = try? $0.asDictionary() }
         self.roomsRef.child(room.id).child("boats").child(user.id).setValue(boatsDict)
-    }
-    
-    func disconnectFromRoom() {
-        
-    }
-    
-    func updateBoatPosition(roomId: String, userId: String, boatId: String, positionId: String) {
-        self.roomsRef.child(roomId).child("boats").child(userId).child(boatId).child("positions").child(positionId).setValue(["is_hurt": true])
     }
 }

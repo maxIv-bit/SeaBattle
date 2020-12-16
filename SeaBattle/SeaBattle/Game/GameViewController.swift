@@ -55,7 +55,10 @@ private extension GameViewController {
     }
     
     func configureUI() {
-        
+        let right = UIBarButtonItem(title: "Start", style: .plain, target: self, action: #selector(rightBarButtonItemAction))
+        navigationItem.rightBarButtonItem = right
+        let back = UIBarButtonItem(title: "Leave", style: .plain, target: self, action: #selector(backBarButtonItemAction))
+        navigationItem.leftBarButtonItem = back
     }
     
     func configureBindings() {
@@ -63,24 +66,24 @@ private extension GameViewController {
             self?.firstUserGameView.update(positions: positions)
         }
         
-        viewModel.didUpdateFirstUserBoatPositions = { [weak self] boat in
-            self?.firstUserGameView.update(boat: boat, isShot: false)
+        viewModel.didUpdateFirstUserBoatPositions = { [weak self] boat, animate in
+            self?.firstUserGameView.update(boat: boat, isShot: false, animate: animate)
         }
         
         viewModel.didShootFirstUserBoat = { [weak self] boat in
-            self?.firstUserGameView.update(boat: boat, isShot: true)
+            self?.firstUserGameView.update(boat: boat, isShot: true, animate: false)
         }
         
         viewModel.didReceiveSecondUserPositions = { [weak self] positions in
             self?.secondUserGameView.update(positions: positions)
         }
         
-        viewModel.didUpdateSecondUserBoatPositions = { [weak self] boat in
-            self?.secondUserGameView.update(boat: boat, isShot: false)
+        viewModel.didUpdateSecondUserBoatPositions = { [weak self] boat, animate in
+            self?.secondUserGameView.update(boat: boat, isShot: false, animate: animate)
         }
         
         viewModel.didShootSecondUserBoat = { [weak self] boat in
-            self?.secondUserGameView.update(boat: boat, isShot: true)
+            self?.secondUserGameView.update(boat: boat, isShot: true, animate: false)
         }
         
         firstUserGameView.didShootPositionAt = { [weak self] indexPath in
@@ -97,6 +100,10 @@ private extension GameViewController {
         
         firstUserGameView.isAbleToShoot = { [weak self] in
             self?.viewModel.isAbleToShoot(true) ?? false
+        }
+        
+        firstUserGameView.shouldShowBoats = { [weak self] in
+            self?.viewModel.shouldShowBoats(true) ?? false
         }
         
         firstUserGameView.isAbleToChangePositions = { [weak self] in
@@ -122,5 +129,22 @@ private extension GameViewController {
         secondUserGameView.isAbleToChangePositions = { [weak self] in
             self?.viewModel.isAbleToChangePositions(false) ?? false
         }
+        
+        secondUserGameView.shouldShowBoats = { [weak self] in
+            self?.viewModel.shouldShowBoats(false) ?? false
+        }
+        
+        viewModel.onError = { error in
+            UIAlertController.showOkAlert(message: error, viewController: UIViewController.pvc())
+        }
+    }
+    
+    @objc func rightBarButtonItemAction(_ sender: UIBarButtonItem) {
+        viewModel.ready()
+    }
+    
+    @objc func backBarButtonItemAction(_ sender: UIBarButtonItem) {
+        viewModel.disconnectFromRoom()
+        navigationController?.popViewController(animated: true)
     }
 }

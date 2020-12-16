@@ -18,13 +18,17 @@ final class BoatView: View {
     var didShootPosition: ((String, Position) -> Void)?
     var isAbleToShoot: (() -> Bool)?
     var isAbleToChangePositions: (() -> Bool)?
+    var shouldShowBoat = false
     
-    init(boat: Boat, frame: CGRect,
+    init(boat: Boat,
+         frame: CGRect,
          didUpdatePositions: ((String, [Position]) -> Void)?,
          didShootPosition: ((String, Position) -> Void)?,
          isAbleToShoot: (() -> Bool)?,
-         isAbleToChangePositions: (() -> Bool)?) {
+         isAbleToChangePositions: (() -> Bool)?,
+         shouldShowBoat: Bool) {
         self.boat = boat
+        self.shouldShowBoat = shouldShowBoat
         
         super.init(frame: frame)
         
@@ -143,12 +147,14 @@ private extension BoatView {
     }
     
     func configureUI() {
-        self.layer.borderColor = UIColor.blue.cgColor
-        self.layer.borderWidth = 5.0
-        self.layer.cornerRadius = 10.0
+        if shouldShowBoat {
+            self.layer.borderColor = UIColor.blue.cgColor
+            self.layer.borderWidth = 5.0
+            self.layer.cornerRadius = 10.0
+        }
         
         configurePositions()
-        stackView.spacing = 4
+        stackView.spacing = 6
         stackView.distribution = .fillEqually
         
         singleTapGesture.numberOfTapsRequired = 1

@@ -48,6 +48,8 @@
 		2D5EBE8B2586472800A8AD05 /* BattleFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5EBE8A2586472800A8AD05 /* BattleFieldView.swift */; };
 		2D5EBE8F258648DB00A8AD05 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5EBE8E258648DB00A8AD05 /* View.swift */; };
 		2D5EBE93258651D900A8AD05 /* CoordinateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5EBE92258651D900A8AD05 /* CoordinateView.swift */; };
+		2D5EF5AC258A8FF0003C814E /* GameRepositoryDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5EF5AB258A8FF0003C814E /* GameRepositoryDefault.swift */; };
+		2D5EF5AF258A8FFC003C814E /* GameRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5EF5AE258A8FFC003C814E /* GameRepository.swift */; };
 		2D635AF32567036D00AE924B /* CGRectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D635AF22567036D00AE924B /* CGRectExtension.swift */; };
 		2D635AF7256703AA00AE924B /* BackdownTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D635AF6256703AA00AE924B /* BackdownTextFieldView.swift */; };
 		2D64CC532565A4A400AC8FD4 /* ChainHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D64CC522565A4A400AC8FD4 /* ChainHandler.swift */; };
@@ -114,6 +116,8 @@
 		2D5EBE8A2586472800A8AD05 /* BattleFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleFieldView.swift; sourceTree = "<group>"; };
 		2D5EBE8E258648DB00A8AD05 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		2D5EBE92258651D900A8AD05 /* CoordinateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateView.swift; sourceTree = "<group>"; };
+		2D5EF5AB258A8FF0003C814E /* GameRepositoryDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRepositoryDefault.swift; sourceTree = "<group>"; };
+		2D5EF5AE258A8FFC003C814E /* GameRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRepository.swift; sourceTree = "<group>"; };
 		2D635AF22567036D00AE924B /* CGRectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRectExtension.swift; sourceTree = "<group>"; };
 		2D635AF6256703AA00AE924B /* BackdownTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackdownTextFieldView.swift; sourceTree = "<group>"; };
 		2D64CC522565A4A400AC8FD4 /* ChainHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainHandler.swift; sourceTree = "<group>"; };
@@ -222,6 +226,7 @@
 			children = (
 				2D5A0B1F25696B7C00D725ED /* AuthRepositoryDefault.swift */,
 				2D5A828B256EBBE600C32F72 /* RoomsRepositoryDefault.swift */,
+				2D5EF5AB258A8FF0003C814E /* GameRepositoryDefault.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -231,6 +236,7 @@
 			children = (
 				2D5A0B1B25696B3300D725ED /* AuthRepository.swift */,
 				2D5A8288256EBBE000C32F72 /* RoomsRepository.swift */,
+				2D5EF5AE258A8FFC003C814E /* GameRepository.swift */,
 			);
 			path = RepositoryInterfaces;
 			sourceTree = "<group>";
@@ -526,6 +532,7 @@
 				2D5D02F82582A75F0033BEED /* BoatView.swift in Sources */,
 				2D4D3E10258663230082C1A4 /* GameView.swift in Sources */,
 				2D5A0B332569846100D725ED /* UITableViewExtension.swift in Sources */,
+				2D5EF5AC258A8FF0003C814E /* GameRepositoryDefault.swift in Sources */,
 				2D5A0B4225698D6700D725ED /* User.swift in Sources */,
 				2D5A0B302569842200D725ED /* Reusable.swift in Sources */,
 				2D64CC5F2565B00B00AC8FD4 /* UIAlertContollerExtension.swift in Sources */,
@@ -540,6 +547,7 @@
 				2D5B2C6D25756C8400F83629 /* BoatPosition.swift in Sources */,
 				2D5A8289256EBBE000C32F72 /* RoomsRepository.swift in Sources */,
 				2D5BD96B257674DA000160CB /* Builder.swift in Sources */,
+				2D5EF5AF258A8FFC003C814E /* GameRepository.swift in Sources */,
 				2D5A827A256EB46800C32F72 /* UserDefaultsWrapper.swift in Sources */,
 				2D5A0A95256946B500D725ED /* Errors.swift in Sources */,
 				2D5A0B032569529900D725ED /* PasswordChainHandler.swift in Sources */,
