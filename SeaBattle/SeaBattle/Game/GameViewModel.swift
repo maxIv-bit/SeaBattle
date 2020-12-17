@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 final class GameViewModel: BaseViewModel {
     private let roomsRepository: RoomsRepository
@@ -41,6 +42,9 @@ final class GameViewModel: BaseViewModel {
     var didShootSecondUserBoat: ((Boat) -> Void)?
     var onError: ((String) -> Void)?
     var onReady: (() -> Void)?
+    
+    // MARK: - Callbacks
+    var shouldShowRotateHint: ((CGRect) -> Void)?
     
     override func launch() {
         if let user = room.players["user1"],
@@ -130,7 +134,7 @@ final class GameViewModel: BaseViewModel {
                 switch result {
                 case .success:
                     position.isShot = true
-                    self.didReceiveSecondUserPositions?(self.firstUserPositions)
+                    self.didReceiveFirstUserPositions?(self.firstUserPositions)
                 case .failure(let error):
                     self.onError?(error.localizedDescription)
                 }
@@ -228,6 +232,16 @@ final class GameViewModel: BaseViewModel {
     func disconnectFromRoom() {
         guard secondUser == currentUser else { return }
         gameRepository.disconnectFromRoom(roomId: room.id, userId: currentUser.id)
+    }
+    
+    func showRotateHint(firstField: Bool, frame: CGRect) {
+        if firstField && isFirstPlayer {
+            shouldShowRotateHint?(frame)
+        }
+        
+        if !firstField && !isFirstPlayer {
+            shouldShowRotateHint?(frame)
+        }
     }
 }
 

@@ -20,6 +20,7 @@ final class GameView: View {
     var isAbleToShoot: (() -> Bool)?
     var isAbleToChangePositions: (() -> Bool)?
     var shouldShowBoats: (() -> Bool)?
+    var onFirstBoatFrame: ((CGRect) -> Void)?
     
     override func configure() {
         configureBindings()
@@ -87,6 +88,14 @@ private extension GameView {
         
         battleFieldView.shouldShowBoats = { [weak self] in
             self?.shouldShowBoats?() ?? false
+        }
+        
+        battleFieldView.onFirstBoatFrame = { [weak self] frame in
+            guard let self = self else { return }
+            var frame = frame
+            frame.x += self.frame.x
+            frame.y += self.frame.y
+            self.onFirstBoatFrame?(frame)
         }
     }
 }

@@ -14,4 +14,23 @@ extension UIView {
         drawHierarchy(in: bounds, afterScreenUpdates: true)
         return UIGraphicsGetImageFromCurrentImageContext()
     }
+    
+    func animatePath(from: CGPath?, to: CGPath?, animationDuration: CFTimeInterval, assignToLayer: CAShapeLayer, completion: (() -> Void)?) {
+        layer.mask = assignToLayer
+        
+        let anim = CABasicAnimation(keyPath: "path")
+        anim.fromValue = from
+        anim.toValue = to
+        anim.duration = animationDuration
+        
+        assignToLayer.add(anim, forKey: "path")
+        
+        CATransaction.begin()
+        CATransaction.setDisableActions(true)
+        CATransaction.setCompletionBlock({
+          completion?()
+        })
+        assignToLayer.path = to
+        CATransaction.commit()
+    }
 }

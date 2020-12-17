@@ -110,6 +110,10 @@ private extension GameViewController {
             self?.viewModel.isAbleToChangePositions(true) ?? false
         }
         
+        firstUserGameView.onFirstBoatFrame = { [weak self] frame in
+            self?.viewModel.showRotateHint(firstField: true, frame: frame)
+        }
+        
         secondUserGameView.didShootPositionAt = { [weak self] indexPath in
             self?.viewModel.shoot(at: indexPath.item)
         }
@@ -132,6 +136,10 @@ private extension GameViewController {
         
         secondUserGameView.shouldShowBoats = { [weak self] in
             self?.viewModel.shouldShowBoats(false) ?? false
+        }
+        
+        secondUserGameView.onFirstBoatFrame = { [weak self] frame in
+            self?.viewModel.showRotateHint(firstField: false, frame: frame)
         }
         
         viewModel.onError = { error in

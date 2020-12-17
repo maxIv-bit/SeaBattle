@@ -41,4 +41,6 @@ final class UserDefaultManager {
     var firstTime: Bool
     @UserDefault("roomId", defaultValue: "")
     var roomId: String
+    @UserDefault("showedHint", defaultValue: false)
+    var showedHint: Bool
 }

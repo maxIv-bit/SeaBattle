@@ -70,11 +70,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigation?.view.layer.add(transition, forKey: nil)
         let gameViewModel = GameViewModel(roomsRepository: roomsRepository, gameRepository: gameRepository, room: room, currentUser: user)
         let gameViewController = GameViewController(viewModel: gameViewModel)
+        gameViewModel.shouldShowRotateHint = { [weak self, weak gameViewController] boatFrame in
+            self?.showHint(boatFrame: boatFrame, parent: gameViewController)
+        }
         navigation?.pushViewController(gameViewController, animated: false)
-        
-//        let rotateHintViewController = RotateHintViewController(viewModel: RotateHintViewModel(boatFrame: CGRect(origin: .zero, size: CGSize(width: 35, height: 100))))
-//        rotateHintViewController.modalPresentationStyle = .fullScreen
-//        gameViewController.present(rotateHintViewController, animated: false, completion: nil)
+    }
+    
+    func showHint(boatFrame: CGRect, parent: UIViewController?) {
+        guard !UserDefaultManager.shared.showedHint else { return }
+        let rotateViewModel = RotateHintViewModel(boatFrame: boatFrame)
+        let rotateHintViewController = RotateHintViewController(viewModel: rotateViewModel)
+        rotateHintViewController.modalPresentationStyle = .overCurrentContext
+        parent?.present(rotateHintViewController, animated: false, completion: nil)
     }
 }
 

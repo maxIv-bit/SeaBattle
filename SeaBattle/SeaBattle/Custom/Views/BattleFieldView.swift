@@ -15,6 +15,7 @@ final class BattleFieldView: View {
     private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     private lazy var dataSource = GameCollectionViewDataSource(collectionView: collectionView)
     private lazy var boatViews = [BoatView]()
+    private lazy var gotBoatFrame = false
     
     // MARK: - Callback
     var didShootPositionAt: ((IndexPath) -> Void)?
@@ -23,6 +24,7 @@ final class BattleFieldView: View {
     var isAbleToShoot: (() -> Bool)?
     var isAbleToChangePositions: (() -> Bool)?
     var shouldShowBoats: (() -> Bool)?
+    var onFirstBoatFrame: ((CGRect) -> Void)?
     
     override func configure() {
         attachViews()
@@ -43,6 +45,14 @@ final class BattleFieldView: View {
                         let newView = BoatView(boat: boat, frame: frame, didUpdatePositions: self.didUpdateBoatPositions, didShootPosition: self.didShootBoatAtPosition, isAbleToShoot: self.isAbleToShoot, isAbleToChangePositions: self.isAbleToChangePositions, shouldShowBoat: self.shouldShowBoats?() ?? false)
                         self.boatViews.append(newView)
                         self.addSubview(newView)
+                        
+                        if !self.gotBoatFrame && boat.length == 4 {
+                            var frame = frame
+                            frame.x += self.frame.x
+                            frame.y += self.frame.y
+                            self.onFirstBoatFrame?(frame)
+                            self.gotBoatFrame = true
+                        }
                     }
                 }
             }
